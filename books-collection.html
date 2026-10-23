@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Collection — Shohruh Xamrayev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Shohruh</a>
+    <nav class="primary">
+      <a href="books.html" class="active">books</a>
+      <a href="journal.html">journal</a>
+      <a href="essays.html">essays</a>
+      <a href="projects.html">projects</a>
+      <a href="studio.html">studio</a>
+    </nav>
+  <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="books.html">&larr; Back to the shelf</a>
+
+  <h1 class="page-title">The collection</h1>
+  <p style="color:var(--muted); margin: -20px 0 28px;">Every book on the shelf. Search the shelf, or filter by status.</p>
+
+  <div class="collection-search-wrap">
+    <input type="text" class="collection-search" id="bookSearch" placeholder="Search by title or author">
+  </div>
+
+  <div class="tab-row">
+    <div class="tab-row-tabs">
+      <button class="tab-btn active" data-filter="all">All <span id="countAll"></span></button>
+      <button class="tab-btn" data-filter="read">Read <span id="countRead"></span></button>
+      <button class="tab-btn" data-filter="reading">Reading <span id="countReading"></span></button>
+    </div>
+    <div class="view-toggle-row">
+      <button class="view-toggle-btn active" id="gridViewBtn" aria-label="Grid view">&#9638;</button>
+      <button class="view-toggle-btn" id="listViewBtn" aria-label="List view">&#9776;</button>
+    </div>
+  </div>
+
+  <div class="books-grid collection-grid" id="collectionGrid"></div>
+</main>
+
+
+<script src="books-data.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var grid = document.getElementById('collectionGrid');
+    var search = document.getElementById('bookSearch');
+    var tabs = document.querySelectorAll('.tab-btn');
+    if (!grid || typeof booksData === 'undefined') return;
+
+    var activeFilter = 'all';
+
+    var readCount = booksData.filter(function (b) { return b.status === 'read'; }).length;
+    var readingCount = booksData.filter(function (b) { return b.status === 'reading'; }).length;
+    document.getElementById('countAll').textContent = booksData.length;
+    document.getElementById('countRead').textContent = readCount;
+    document.getElementById('countReading').textContent = readingCount;
+
+    booksData.forEach(function (book) {
+      var card = document.createElement('a');
+      card.className = 'book-card';
+      card.href = 'books/' + book.slug + '.html';
+      card.dataset.status = book.status;
+      card.dataset.title = book.title.toLowerCase();
+      card.dataset.author = book.author.toLowerCase();
+      card.innerHTML =
+        '<img class="book-card-cover" src="' + book.cover + '" alt="' + book.title + ' cover">' +
+        '<div class="book-card-title">' + book.title + '</div>' +
+        '<div class="book-card-author">' + book.author + '</div>';
+      grid.appendChild(card);
+    });
+
+    var cards = grid.querySelectorAll('.book-card');
+
+    function applyFilters() {
+      var query = search.value.trim().toLowerCase();
+      cards.forEach(function (card) {
+        var matchesFilter = activeFilter === 'all' || card.dataset.status === activeFilter;
+        var matchesSearch = !query || card.dataset.title.includes(query) || card.dataset.author.includes(query);
+        card.style.display = (matchesFilter && matchesSearch) ? '' : 'none';
+      });
+    }
+
+    search.addEventListener('input', applyFilters);
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        activeFilter = tab.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    var gridBtn = document.getElementById('gridViewBtn');
+    var listBtn = document.getElementById('listViewBtn');
+
+    gridBtn.addEventListener('click', function () {
+      grid.classList.remove('list-view');
+      gridBtn.classList.add('active');
+      listBtn.classList.remove('active');
+    });
+
+    listBtn.addEventListener('click', function () {
+      grid.classList.add('list-view');
+      listBtn.classList.add('active');
+      gridBtn.classList.remove('active');
+    });
+  });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

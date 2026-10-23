@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books — Shohruh Xamrayev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Shohruh</a>
+    <nav class="primary">
+      <a href="books.html" class="active">books</a>
+      <a href="journal.html">journal</a>
+      <a href="essays.html">essays</a>
+      <a href="projects.html">projects</a>
+      <a href="studio.html">studio</a>
+    </nav>
+  <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="books-intro-block">
+    <h1 class="page-title">Books</h1>
+    <p class="books-intro">A personal shelf of what I'm reading and what stuck with me.</p>
+  </div>
+
+  <div class="books-shelf-wrap">
+    <div class="books-grid" id="booksGrid"></div>
+  </div>
+
+  <p class="browse-collection"><a href="books-collection.html">Browse the full collection &rarr;</a></p>
+
+  <div class="entry-list" id="booksList"></div>
+
+</main>
+
+
+<script src="books-data.js"></script>
+<script src="books-render.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
