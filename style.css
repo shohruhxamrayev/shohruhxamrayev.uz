@@ -3140,3 +3140,6 @@ body.es-hover .es-index .essay-thumb { display: none; }
   body.nav-open::after { content: ""; position: fixed; inset: 0; z-index: 5; background: rgba(40, 28, 15, .18); animation: pjFade .2s ease; }
 }
 @keyframes navDrop { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
+.hm-kicker a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(196,112,63,.35); }
+.hm-kicker a:hover { border-bottom-color: var(--accent); }

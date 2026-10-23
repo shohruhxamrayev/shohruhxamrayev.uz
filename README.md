@@ -18,3 +18,7 @@ The shelf, reading list, collection and book page all update from the data autom
 3. Copy any file in `journal/` (e.g. `bukhara.html`) to `journal/<slug>.html` and change `data-slug="..."`.
 
 The map, stats, filters, timeline, entry page and photo viewer all update from the data.
+
+## SEO
+
+`tools/seo.py` adds the title, description, share-preview tags, icons and structured data (who Shohruh Xamrayev is, founder of Makon, essay authorship) to every page, and rebuilds `sitemap.xml`. After adding a page, run `python3 tools/seo.py` (or ask Claude to).
