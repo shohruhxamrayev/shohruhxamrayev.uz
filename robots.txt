@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 
-Sitemap: https://shohruhxamrayev.uz/sitemap.xml
+Sitemap: https://www.shohruhxamrayev.uz/sitemap.xml

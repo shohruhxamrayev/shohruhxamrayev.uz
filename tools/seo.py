@@ -3,7 +3,7 @@ Safe to re-run: it replaces the block between <!-- seo --> and <!-- /seo -->, an
 import glob, json, os, re, subprocess, html
 from datetime import date
 
-SITE = "https://shohruhxamrayev.uz"
+SITE = "https://www.shohruhxamrayev.uz"
 NAME = "Shohruh Xamrayev"
 PERSON_ID = SITE + "/#person"
 DEFAULT_IMG = SITE + "/og-image.jpg"
