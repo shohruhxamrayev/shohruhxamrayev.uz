@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Website — Shohruh Xamrayev</title>
+<meta name="description" content="How shohruhxamrayev.uz is built and shipped: plain HTML, CSS and JavaScript, GitHub and Vercel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Shohruh</a>
+    <nav class="primary">
+      <a href="../books.html">books</a>
+      <a href="../journal.html">journal</a>
+      <a href="../essays.html">essays</a>
+      <a href="../projects.html" class="active">projects</a>
+      <a href="../studio.html">studio</a>
+    </nav>
+  <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="pj-article">
+    <nav class="crumbs pj-crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../projects.html">Projects</a><span>/</span><span aria-current="page">Personal Website</span></nav>
+
+    <header class="pj-hero">
+      <h1>Personal Website</h1>
+      <p class="pj-hero-meta">2026 – Present <span class="bk-dot">&middot;</span> <a href="https://shohruhxamrayev.uz">live</a> <span class="bk-dot">&middot;</span> <a href="https://github.com/shohruhxamrayev/shohruhxamrayev.uz">github</a></p>
+      <p class="pj-hero-stack">HTML · CSS · JavaScript · GitHub · Vercel</p>
+    </header>
+
+    <div class="pj-summary">
+      <p><strong>A quiet home for my books, essays, journal and projects, written by hand and shipped from GitHub to my own domain.</strong></p>
+      <ol>
+        <li><a href="#context">Context</a></li>
+        <li><a href="#shipping">How It Ships</a></li>
+        <li><a href="#bookshelf">The Bookshelf</a></li>
+        <li><a href="#design">Design Decisions</a></li>
+        <li><a href="#demonstrates">What This Project Demonstrates</a></li>
+      </ol>
+    </div>
+
+    <h2 id="context">1. Context</h2>
+    <p>This is the website you're reading. I wanted one place for the things I think about: notes on the books that changed how I think, essays, a journal of trips, and the projects I build when an idea won't leave me alone.</p>
+    <ul>
+      <li><strong>Books</strong>: a shelf of what I'm reading, with my ratings and notes</li>
+      <li><strong>Essays</strong>: 10 so far, on habits, money, the mind and character</li>
+      <li><strong>Journal</strong>: trips and days worth remembering, with photos</li>
+      <li><strong>Projects</strong>: case studies like this one</li>
+    </ul>
+
+    <h2 id="shipping">2. How It Ships</h2>
+    <p>The site lives in a GitHub repository connected to Vercel. Every change pushed to <code>main</code> deploys itself, and the domain stays attached to the Vercel project the whole time.</p>
+
+    <figure class="pj-figure pj-stepper" data-auto="3400" data-pause>
+      <div class="pj-pipe">
+        <span class="pj-pipe-node" data-on="1"><b>Edit</b><small>a page or books-data.js</small></span>
+        <span class="pj-pipe-link" data-on="2"></span>
+        <span class="pj-pipe-node" data-on="2"><b>GitHub</b><small>shohruhxamrayev.uz repo</small></span>
+        <span class="pj-pipe-link" data-on="3"></span>
+        <span class="pj-pipe-node" data-on="3"><b>Vercel</b><small>deploys main</small></span>
+        <span class="pj-pipe-link" data-on="4"></span>
+        <span class="pj-pipe-node" data-on="4"><b>Live</b><small>shohruhxamrayev.uz</small></span>
+      </div>
+      <div class="pj-steps" role="tablist">
+        <button data-step="1" role="tab">1. edit</button>
+        <button data-step="2" role="tab">2. push</button>
+        <button data-step="3" role="tab">3. deploy</button>
+        <button data-step="4" role="tab">4. live</button>
+      </div>
+      <div class="pj-caps">
+        <p data-cap="1">Content is plain files: an HTML page per essay or trip, and one <code>books-data.js</code> for the whole shelf. I can edit them anywhere, even in the GitHub web editor.</p>
+        <p data-cap="2">A commit to <code>main</code> on GitHub is the only step I take by hand. The repository keeps the full history, so any change can be rolled back.</p>
+        <p data-cap="3">Vercel sees the push and publishes the new version. There's no build step, so it serves the files as they are.</p>
+        <p data-cap="4">The domain is bought from <strong>Billur</strong> and points at Vercel. It belongs to the project, not to a deploy, so it survives every update.</p>
+      </div>
+      <figcaption>From an edit to the live site, with <strong>one push</strong>.</figcaption>
+    </figure>
+
+    <h2 id="bookshelf">3. The Bookshelf</h2>
+    <p>The books page is the most playful part of the site: a shelf of spines where the selected book turns to face you. This one is live, so try the arrows, the slider, or hover a spine.</p>
+
+    <figure class="pj-figure pj-shelf-demo">
+      <div data-embed-shelf data-base="../"></div>
+      <p class="pj-shelf-info" data-embed-info aria-live="polite"></p>
+      <figcaption>The real component, running on the real data.</figcaption>
+    </figure>
+
+    <ul>
+      <li><strong>One source of truth.</strong> A single data file drives the shelf, the reading list, the collection and every book page</li>
+      <li><strong>Spines from covers.</strong> Each spine's colour comes from its cover's dominant colour, sampled in the browser and cached</li>
+      <li><strong>Every input.</strong> Arrows, slider, keyboard, swipe on phones and sideways trackpad scroll</li>
+    </ul>
+
+    <h2 id="design">4. Design Decisions</h2>
+    <p>I wanted it to feel like paper rather than an app: warm, quiet and easy to read for a long time.</p>
+    <div class="pj-swatches"><span style="background:#f8f5ee;--t:#3f3122"><code>#f8f5ee</code><em>paper</em></span><span style="background:#e8ddc9;--t:#3f3122"><code>#e8ddc9</code><em>line</em></span><span style="background:#8a7358;--t:#fbf6ec"><code>#8a7358</code><em>muted</em></span><span style="background:#c4703f;--t:#fff"><code>#c4703f</code><em>accent</em></span><span style="background:#3f3122;--t:#fbf6ec"><code>#3f3122</code><em>ink</em></span></div>
+    <ul>
+      <li><strong>Three typefaces, three jobs.</strong> Fraunces for headings, Inter for reading and IBM Plex Mono for navigation and small details</li>
+      <li><strong>A narrow column.</strong> Text sits in a 640&nbsp;px column, so lines stay a comfortable length</li>
+      <li><strong>No framework, no build.</strong> Plain HTML, CSS and JavaScript. Pages load fast, and anything can be fixed with a text editor</li>
+    </ul>
+
+    <h2 id="demonstrates">5. What This Project Demonstrates</h2>
+    <p>Small, careful craft: building something personal end to end, from the writing and the interactions to hosting, a custom domain and a deploy pipeline that makes changing it effortless.</p>
+    <div class="pj-stats">
+      <div><b>10</b><span>essays</span></div>
+      <div><b>6</b><span>journal entries</span></div>
+      <div><b>10</b><span>books on the shelf</span></div>
+      <div><b>0</b><span>frameworks</span></div>
+    </div>
+
+    <p class="bk-page-back"><a href="../projects.html">&larr; All projects</a> <span class="bk-dot">&middot;</span> <a href="https://github.com/shohruhxamrayev/shohruhxamrayev.uz">Source on GitHub</a></p>
+  </article>
+</main>
+
+<script src="../books-data.js"></script>
+<script src="../books-shelf.js"></script>
+<script src="../projects.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

@@ -212,6 +212,8 @@
     return { select: select };
   }
 
+  window.BookShelf = { build: buildShelf, books: books };
+
   // ---------- list entries ----------
   function entryHTML(b, base) {
     var href = base + 'books/' + b.slug + '.html';

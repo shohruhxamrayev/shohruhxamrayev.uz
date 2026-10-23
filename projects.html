@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects — Shohruh Xamrayev</title>
+<meta name="description" content="Things I have built: products, tools and the web.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,27 +26,51 @@
 </header>
 
 <main class="wrap">
-  <h1 class="page-title">Projects</h1>
-  <p style="color:var(--muted); margin: -20px 0 32px;">Things I've built, across whatever I've been curious about lately.</p>
+  <h1 class="page-title pj-index-title">Projects</h1>
+  <p class="pj-index-lede">Things I've built when an idea stayed in my head for too long.</p>
 
-  <div class="category-label">Web</div>
-  <div class="entry-list">
-    <div class="entry project-entry">
-      <img class="thumb" src="project-website-thumb.svg" alt="Personal Website project thumbnail">
-      <h3><a href="index.html">Personal Website</a></h3>
-      <p class="meta">2026 &ndash; Present</p>
-      <p>This website you're currently browsing.</p>
-      <div class="tag-row">
-        <span class="tag-pill">HTML</span>
-        <span class="tag-pill">CSS</span>
-        <span class="tag-pill">Vercel</span>
-        <span class="tag-pill">GitHub</span>
-      </div>
-    </div>
+  <div class="pj-tabs" role="tablist">
+    <button class="pj-tab active" role="tab" aria-selected="true" data-cat="all">All <span></span></button>
+    <button class="pj-tab" role="tab" aria-selected="false" data-cat="product">Product <span></span></button>
+    <button class="pj-tab" role="tab" aria-selected="false" data-cat="web">Web <span></span></button>
+  </div>
+
+  <div class="pj-cards">
+
+    <article class="pj-card" data-cat="product">
+      <h2 class="pj-card-title"><a href="projects/makon.html">Makon</a></h2>
+      <p class="pj-card-date">October 2026</p>
+      <p class="pj-card-lede">An AI studio that takes one photo of a room and carries it all the way to a measured plan, a 3D model, a furniture list and a build brief.</p>
+      <a class="pj-visual pj-stepper" href="projects/makon.html" data-auto="2400" data-hover aria-label="Open the Makon case study">
+        <span class="pj-flow"><span class="pj-node" data-step="1" data-on="1"><b>Photo</b><small>one picture of the room</small></span><span class="pj-node" data-step="2" data-on="2"><b>Redesign</b><small>AI render or on-device preview</small></span><span class="pj-node" data-step="3" data-on="3"><b>Plan</b><small>measured 2D floor plan</small></span><span class="pj-node" data-step="4" data-on="4"><b>3D</b><small>lit room you can walk around</small></span><span class="pj-node" data-step="5" data-on="5"><b>Furnish</b><small>real-size pieces, fit checks</small></span></span>
+        <span class="pj-shot pj-shot-photo"><img src="projects/img/makon-before.jpg" alt="" loading="lazy" data-on="1"><img src="projects/img/makon-after.jpg" alt="" loading="lazy" data-on="2"><img src="projects/img/makon-plan.jpg" alt="" loading="lazy" data-on="3"><img src="projects/img/makon-3d.jpg" alt="" loading="lazy" data-on="4"><img src="projects/img/makon-furnish.jpg" alt="" loading="lazy" data-on="5"></span>
+      </a>
+      <p class="pj-stack">JavaScript · three.js · Vercel Functions · FLUX.2 / OpenAI images · IndexedDB</p>
+    </article>
+
+    <article class="pj-card" data-cat="web">
+      <h2 class="pj-card-title"><a href="projects/personal-website.html">Personal Website</a></h2>
+      <p class="pj-card-date">2026 – Present</p>
+      <p class="pj-card-lede">This site: a quiet home for my books, essays, journal and projects, written by hand and shipped from GitHub to my own domain.</p>
+      <a class="pj-visual pj-stepper" href="projects/personal-website.html" data-auto="2400" data-hover aria-label="Open the personal website case study">
+        <span class="pj-flow"><span class="pj-node" data-step="1" data-on="1"><b>Home</b><small>who I am</small></span><span class="pj-node" data-step="2" data-on="2"><b>Books</b><small>the shelf</small></span><span class="pj-node" data-step="3" data-on="3"><b>Essays</b><small>long-form thinking</small></span><span class="pj-node" data-step="4" data-on="4"><b>Journal</b><small>trips and notes</small></span></span>
+        <span class="pj-shot pj-browser">
+          <span class="pj-browser-bar"><i></i><i></i><i></i><span class="pj-url">shohruhxamrayev.uz<em data-on="2">/books</em><em data-on="3">/essays</em><em data-on="4">/journal</em></span></span>
+          <span class="pj-browser-view">
+            <img src="projects/img/site-index.jpg" alt="" loading="lazy" data-on="1">
+            <span class="pj-mini-shelf" data-on="2"><i style="--h:92%;--c:#c8402f"></i><i style="--h:100%;--c:#f1ede4"></i><i style="--h:96%;--c:#2f6f86"></i><i style="--h:100%;--c:#2a1714"></i><i style="--h:90%;--c:#e7b8bf"></i><i style="--h:98%;--c:#dfe7ea"></i><i style="--h:100%;--c:#7d1b26"></i><i style="--h:94%;--c:#f4f2ec"></i><i style="--h:100%;--c:#b8ada0"></i><i style="--h:97%;--c:#ece4d2"></i></span>
+            <img src="projects/img/site-essays.jpg" alt="" loading="lazy" data-on="3">
+            <img src="projects/img/site-journal.jpg" alt="" loading="lazy" data-on="4">
+          </span>
+        </span>
+      </a>
+      <p class="pj-stack">HTML · CSS · JavaScript · GitHub · Vercel</p>
+    </article>
+
   </div>
 </main>
 
-
+<script src="projects.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

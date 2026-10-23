@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makon — Shohruh Xamrayev</title>
+<meta name="description" content="Makon: an AI studio that turns one photo of a room into a measured plan, a 3D model, a furniture list and a build brief.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Shohruh</a>
+    <nav class="primary">
+      <a href="../books.html">books</a>
+      <a href="../journal.html">journal</a>
+      <a href="../essays.html">essays</a>
+      <a href="../projects.html" class="active">projects</a>
+      <a href="../studio.html">studio</a>
+    </nav>
+  <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="pj-article">
+    <nav class="crumbs pj-crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../projects.html">Projects</a><span>/</span><span aria-current="page">Makon</span></nav>
+
+    <header class="pj-hero">
+      <h1>Makon</h1>
+      <p class="pj-hero-meta">October 2026 <span class="bk-dot">&middot;</span> <a href="https://github.com/shohruhxamrayev/makon">github</a></p>
+      <p class="pj-hero-stack">JavaScript · three.js · Vercel Functions · FLUX.2 / OpenAI images · IndexedDB</p>
+    </header>
+
+    <div class="pj-summary">
+      <p><strong>An AI studio that takes one photo of a room and carries it all the way to a measured plan, a 3D model, a furniture list and a build brief.</strong></p>
+      <ol>
+        <li><a href="#context">Context</a></li>
+        <li><a href="#problem">Problem and Objective</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#design">Keep the Room, Change the Style</a></li>
+        <li><a href="#plan">Plan, 3D and Fit Checks</a></li>
+        <li><a href="#architecture">System Architecture</a></li>
+        <li><a href="#decisions">Engineering Decisions</a></li>
+        <li><a href="#demonstrates">What This Project Demonstrates</a></li>
+      </ol>
+    </div>
+
+    <h2 id="context">1. Context</h2>
+    <p>Makon means &ldquo;a place to live.&rdquo; It is a web studio for redesigning a room: you photograph one room, and Makon keeps its walls, windows and light while redesigning what sits inside.</p>
+    <p>It doesn't stop at the picture. The same project becomes a measured floor plan, a lit 3D room, a furniture schedule with real sizes and prices, and a brief you can print and hand to whoever is doing the work.</p>
+
+    <h2 id="problem">2. Problem and Objective</h2>
+    <p>An AI render on its own is just a picture. It looks good, but it doesn't tell you how many litres of paint to buy, whether the sofa fits, or whether you can still open the door.</p>
+    <p>Makon was built to close that gap:</p>
+    <ul>
+      <li>Keep the real room (walls, windows, daylight) and only change what you choose</li>
+      <li>Turn the idea into measurements, quantities and a budget</li>
+      <li>Work for anyone, even with no AI key connected at all</li>
+    </ul>
+
+    <h2 id="how-it-works">3. How It Works</h2>
+    <p>One project moves through five tools. Each one hands its result to the next.</p>
+
+    <figure class="pj-figure pj-stepper" data-auto="4200" data-pause>
+      <div class="pj-stage">
+        <img src="img/makon-after.jpg" alt="The room redesigned in a warm oak and linen style" data-on="1" loading="lazy">
+        <img src="img/makon-plan.jpg" alt="A measured floor plan of the room with furniture" data-on="2" loading="lazy">
+        <img src="img/makon-3d.jpg" alt="The room as a 3D model seen from above" data-on="3" loading="lazy">
+        <img src="img/makon-furnish.jpg" alt="Eye-level view of the furnished 3D room" data-on="4" loading="lazy">
+        <div class="pj-brief" data-on="5" aria-label="Build brief contents">
+          <p class="pj-brief-h">Build brief <span>Living room</span></p>
+          <ul>
+            <li><b>Checklist</b><i style="--w:88%"></i></li>
+            <li><b>Before / after</b><i style="--w:64%"></i></li>
+            <li><b>Materials</b><i style="--w:72%"></i></li>
+            <li><b>Plan &amp; wall table</b><i style="--w:80%"></i></li>
+            <li><b>Quantities</b><i style="--w:58%"></i></li>
+            <li><b>Furniture schedule</b><i style="--w:92%"></i></li>
+            <li><b>Budget</b><i class="pj-budget" style="--w:76%"></i></li>
+          </ul>
+          <p class="pj-brief-f">Print / PDF · copy · .txt · project file</p>
+        </div>
+      </div>
+      <div class="pj-steps" role="tablist">
+        <button data-step="1" role="tab">1. design</button>
+        <button data-step="2" role="tab">2. plan</button>
+        <button data-step="3" role="tab">3. 3D</button>
+        <button data-step="4" role="tab">4. furnish</button>
+        <button data-step="5" role="tab">5. build</button>
+      </div>
+      <div class="pj-caps">
+        <p data-cap="1"><strong>Design</strong> takes a photo (upload, camera, paste or the sample), applies one of 10 styles and renders it with AI, or makes an instant mood preview on the device.</p>
+        <p data-cap="2"><strong>Plan</strong> is a 2D editor: draw walls with snapping, place doors and windows, calibrate from one measured wall, and read area and perimeter.</p>
+        <p data-cap="3"><strong>3D</strong> turns the plan into a lit room with real openings, glass and floor textures. The sun follows the daylight direction you set.</p>
+        <p data-cap="4"><strong>Furnish</strong> adds 46 pieces at real sizes. New pieces find free space, and every move is checked against walls, doors and walkways.</p>
+        <p data-cap="5"><strong>Build</strong> writes the brief live: checklist, materials, quantities (paint, flooring with waste, skirting), furniture schedule and a budget bar that warns on overspend.</p>
+      </div>
+      <figcaption>One room through the whole pipeline, from <strong>photo</strong> to <strong>build brief</strong>.</figcaption>
+    </figure>
+
+    <h2 id="design">4. Keep the Room, Change the Style</h2>
+    <p>The redesign has to look like <em>your</em> room. So you choose what stays exactly as it is: the window plane, doors and archways, floor, ceiling and lights, wall colour, built-in units, radiators or the furniture layout. You also set how strong the change is and which way the daylight comes from.</p>
+
+    <figure class="pj-figure">
+      <div class="pj-compare" style="--x:50%">
+        <img src="img/makon-before.jpg" alt="The original room: a plain sofa, dark coffee table and bare walls">
+        <img class="pj-compare-after" src="img/makon-after.jpg" alt="The redesigned room: a curved boucl&eacute; sofa, oak table, linen and warm light">
+        <span class="pj-compare-line" aria-hidden="true"></span>
+        <span class="pj-compare-tag pj-compare-tag-l">before</span>
+        <span class="pj-compare-tag pj-compare-tag-r">after</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+      </div>
+      <figcaption>Drag to compare. The window, archway, radiator and sideboard are <strong>kept</strong>, and everything else is restyled.</figcaption>
+    </figure>
+
+    <p>Each style is more than a filter. It carries a palette for the on-device preview, finishes for the 3D room and a materials list for the brief. Pick one:</p>
+
+    <figure class="pj-figure pj-styles">
+      <script type="application/json">[{"name":"Warm Oak & Linen","note":"Limewash, oak, linen","palette":["#efe4d2","#d9bf98","#b98656","#c4643a","#f6efe3"],"mats":[["Walls","Warm limewash, matte"],["Floor","Natural oiled oak"],["Sofa","Washed linen, oat"],["Tables","Light oak, rounded edges"],["Textiles","Linen curtains, wool throw"],["Accents","Terracotta ceramics"]]},{"name":"Nordic Light","note":"Pale ash, white, wool","palette":["#f5f4f0","#e2dbcf","#c9b99c","#9aa7a0","#2b2f2e"],"mats":[["Walls","Soft white, eggshell"],["Floor","Pale ash, white-oiled"],["Sofa","Light grey wool"],["Tables","Pale ash"],["Textiles","Chunky wool, sheepskin"],["Accents","Black steel lamp"]]},{"name":"Japandi Calm","note":"Washi, walnut, stone","palette":["#ebe5da","#cdbfa8","#8c7660","#4a3c30","#a7a596"],"mats":[["Walls","Clay plaster, warm grey"],["Floor","Smoked oak"],["Sofa","Low, natural cotton"],["Tables","Dark walnut, low"],["Textiles","Washi paper lamp, linen"],["Accents","Stoneware, ikebana branch"]]},{"name":"Sage & Stone","note":"Green, travertine, rattan","palette":["#e1e5d6","#a9b896","#7d8f6a","#cdbb9c","#f2efe6"],"mats":[["Walls","Sage clay paint"],["Floor","Natural oak"],["Sofa","Cotton bouclé, stone"],["Tables","Travertine top"],["Textiles","Cotton, jute rug"],["Accents","Rattan & plants"]]},{"name":"Midnight Velvet","note":"Ink blue, brass, walnut","palette":["#1f2a44","#34456b","#b08d57","#5a3e2b","#d9cbb0"],"mats":[["Walls","Ink blue, flat matt"],["Floor","Dark walnut herringbone"],["Sofa","Deep blue velvet"],["Tables","Dark walnut, brass trim"],["Textiles","Velvet, heavy drapes"],["Accents","Brushed brass lighting"]]},{"name":"Industrial Loft","note":"Concrete, steel, leather","palette":["#9a9993","#5d5c58","#2e2d2b","#8a5a3a","#d6d1c7"],"mats":[["Walls","Microcement, grey"],["Floor","Polished concrete"],["Sofa","Cognac leather"],["Tables","Black steel & reclaimed wood"],["Textiles","Wool, canvas"],["Accents","Exposed bulbs, metal shelving"]]},{"name":"Boho Terracotta","note":"Rust, rattan, pattern","palette":["#e8d3bb","#c9805a","#9c4f30","#d8b26e","#6b7a4e"],"mats":[["Walls","Warm sand plaster"],["Floor","Terracotta tile"],["Sofa","Rust cotton, low"],["Tables","Rattan & mango wood"],["Textiles","Kilim rug, macramé"],["Accents","Plants, woven baskets"]]},{"name":"Mediterranean Lime","note":"Whitewash, blue, olive","palette":["#f4f0e8","#e3d6bf","#3f6c8f","#8c8f5a","#c99a6b"],"mats":[["Walls","Lime whitewash"],["Floor","Handmade cotto tile"],["Sofa","White cotton slipcover"],["Tables","Olive wood, stone"],["Textiles","Striped linen"],["Accents","Blue ceramics, olive tree"]]},{"name":"Mid-Century","note":"Teak, mustard, walnut","palette":["#efe6d6","#c9a063","#8a5a33","#d79f2b","#2f5a5a"],"mats":[["Walls","Warm white"],["Floor","Teak parquet"],["Sofa","Mustard wool, tapered legs"],["Tables","Teak, oval"],["Textiles","Geometric rug"],["Accents","Teal ceramics, arc lamp"]]},{"name":"Gallery Minimal","note":"White, black, oak","palette":["#f7f7f5","#e4e2dd","#bdb8ae","#1c1c1c","#c8a77a"],"mats":[["Walls","Gallery white"],["Floor","Wide white-oak boards"],["Sofa","Off-white, block form"],["Tables","Black stone"],["Textiles","None — bare and calm"],["Accents","One large artwork"]]}]</script>
+      <div class="pj-styles-list"></div>
+      <div class="pj-styles-panel" aria-live="polite"></div>
+      <figcaption>The 10 styles, straight from Makon's style data.</figcaption>
+    </figure>
+
+    <p>Renders are kept as a version history (up to 24), and you can refine one in plain words (&ldquo;make the rug lighter&rdquo;) with undo. The palette is extracted from every render, with copyable colour codes.</p>
+
+    <h2 id="plan">5. Plan, 3D and Fit Checks</h2>
+    <p>The floor plan is where the idea becomes real. Rooms start from a rectangle or L-shape, or you draw the walls yourself with vertex, right-angle and alignment snapping. Measure one wall with a tape and the whole plan calibrates to it, in metric or imperial.</p>
+    <p>Furniture is checked as you place it: through a wall, outside the room, overlapping, blocking a door swing, or leaving a walkway under 60&nbsp;cm. Try the walkway rule:</p>
+
+    <figure class="pj-figure pj-walk">
+      <div class="pj-walk-plan" aria-hidden="true">
+        <span class="pj-walk-sofa">Sofa</span>
+        <span class="pj-walk-gap"><em></em></span>
+        <span class="pj-walk-table">Coffee table</span>
+      </div>
+      <label class="pj-walk-ctl">Gap <input type="range" min="20" max="110" value="74" aria-label="Gap between sofa and coffee table in centimetres"></label>
+      <p class="pj-walk-out" aria-live="polite"></p>
+      <figcaption>Same threshold as Makon: under <strong>60&nbsp;cm</strong> gets a tight-walkway warning.</figcaption>
+    </figure>
+
+    <p>In 3D, the plan becomes a room with real wall openings, glass, doors, skirting and plank or tile floors. There are perspective, top, front, side and eye-level cameras, walls cut away so you can see in, and shadows from a sun that follows the daylight direction.</p>
+
+    <figure class="pj-figure pj-pair">
+      <img src="img/makon-3d.jpg" alt="3D room from above with walls cut away" loading="lazy">
+      <img src="img/makon-evening.jpg" alt="The same room at eye level in evening light" loading="lazy">
+      <figcaption>The same room from above and at eye level in <strong>evening light</strong>.</figcaption>
+    </figure>
+
+    <h2 id="architecture">6. System Architecture</h2>
+    <p>Makon is a static site with one serverless function. Almost everything runs in the browser as plain JavaScript modules, with no framework and no build step.</p>
+
+    <figure class="pj-figure pj-stepper" data-auto="3600" data-pause>
+      <div class="pj-arch">
+        <div class="pj-arch-col">
+          <p class="pj-arch-h">Browser · Studio</p>
+          <span class="pj-chip" data-on="1 2">design.js</span>
+          <span class="pj-chip" data-on="1">engine.js</span>
+          <span class="pj-chip" data-on="3">plan.js</span>
+          <span class="pj-chip" data-on="3">scene3d.js <small>three.js r160</small></span>
+          <span class="pj-chip" data-on="3">furnish.js</span>
+          <span class="pj-chip" data-on="4">build.js</span>
+          <span class="pj-chip" data-on="4">store.js</span>
+        </div>
+        <div class="pj-arch-col">
+          <p class="pj-arch-h">Vercel</p>
+          <span class="pj-chip pj-chip-lg" data-on="2">/api/redesign <small>serverless, up to 120 s</small></span>
+          <p class="pj-arch-h">Providers</p>
+          <span class="pj-chip" data-on="2">Cloudflare Workers AI <small>FLUX.2 Klein · free</small></span>
+          <span class="pj-chip" data-on="2">OpenAI <small>gpt-image · paid</small></span>
+          <span class="pj-chip pj-chip-opt" data-on="2">Upstash Redis <small>daily limits · optional</small></span>
+        </div>
+        <div class="pj-arch-col">
+          <p class="pj-arch-h">On the device</p>
+          <span class="pj-chip" data-on="4">IndexedDB <small>autosave</small></span>
+          <span class="pj-chip" data-on="4">localStorage <small>accounts</small></span>
+          <span class="pj-chip" data-on="4">Print · PDF · .txt <small>exports</small></span>
+        </div>
+      </div>
+      <div class="pj-steps" role="tablist">
+        <button data-step="1" role="tab">1. preview</button>
+        <button data-step="2" role="tab">2. AI render</button>
+        <button data-step="3" role="tab">3. plan &amp; 3D</button>
+        <button data-step="4" role="tab">4. save &amp; brief</button>
+      </div>
+      <div class="pj-caps">
+        <p data-cap="1">The photo never has to leave the device. <code>engine.js</code> makes an instant <strong>mood preview</strong> with real Lab colour transfer toward the style's palette.</p>
+        <p data-cap="2">For a real render, <code>design.js</code> calls <code>/api/redesign</code>, which picks the connected provider, checks the visitor's daily limit and returns the image.</p>
+        <p data-cap="3">The plan, the 3D scene and the furniture all share one room model, so moving a sofa in 3D moves it on the plan too.</p>
+        <p data-cap="4">Projects autosave to <strong>IndexedDB</strong>, and <code>build.js</code> turns them into a printable brief. Whole projects export and import as files.</p>
+      </div>
+      <figcaption>Which parts work at each step. Hover to pause, or pick a step.</figcaption>
+    </figure>
+
+    <h2 id="decisions">7. Engineering Decisions</h2>
+    <p>Most of the work went into making it dependable for people I'll never meet.</p>
+    <ul>
+      <li><strong>Works with no key.</strong> Without an AI provider, Design still makes on-device previews, so the demo never breaks</li>
+      <li><strong>A free path and a paid path.</strong> Cloudflare Workers AI (about 100 renders a day, free) or OpenAI for higher quality. If both are set, OpenAI is used</li>
+      <li><strong>Fair limits.</strong> Each visitor gets 5 AI renders a day by default, and failed renders don't count. Upstash Redis makes the limit exact, an owner code skips it, and an optional access code locks rendering to people I share it with</li>
+      <li><strong>Errors without secrets.</strong> Provider errors are made readable without ever echoing key text back to the browser</li>
+      <li><strong>No CDN dependency.</strong> three.js is bundled and served with long-lived immutable caching</li>
+      <li><strong>Data stays local, but swappable.</strong> Accounts and storage live behind two small modules, so a backend like Supabase can replace them without touching the rest</li>
+    </ul>
+
+    <h2 id="demonstrates">8. What This Project Demonstrates</h2>
+    <p>Makon is product engineering end to end: an AI pipeline with a graceful fallback, a geometry-aware 2D editor, a real-time 3D scene, and the unglamorous parts that make a tool usable, like undo, autosave, exports, limits and a phone layout with a bottom tab bar.</p>
+    <div class="pj-stats">
+      <div><b>10</b><span>styles</span></div>
+      <div><b>46</b><span>furniture pieces at real size</span></div>
+      <div><b>9</b><span>room types</span></div>
+      <div><b>24</b><span>render versions kept</span></div>
+    </div>
+
+    <p class="bk-page-back"><a href="../projects.html">&larr; All projects</a> <span class="bk-dot">&middot;</span> <a href="https://github.com/shohruhxamrayev/makon">Source on GitHub</a></p>
+  </article>
+</main>
+
+<script src="../projects.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>
