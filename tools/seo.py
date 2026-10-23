@@ -15,14 +15,15 @@ PERSON = {
     "url": SITE + "/", "image": SITE + "/icon-512.png",
     "jobTitle": "Founder of Makon",
     "description": "Shohruh Xamrayev is the founder of Makon, an AI studio that turns one photo of a room into a measured plan, a 3D model and a build brief. He writes essays, keeps notes on books and builds web products.",
-    "worksFor": {"@type": "Organization", "@id": SITE + "/projects/makon.html#org", "name": "Makon"},
+    "worksFor": {"@type": "Organization", "@id": SITE + "/projects/makon.html#org", "name": "Makon", "url": "https://makon-khaki.vercel.app/"},
     "knowsAbout": ["Web development", "Product design", "Artificial intelligence", "Economics", "Psychology", "Technology", "History"],
     "sameAs": SOCIALS,
 }
+MAKON_LIVE = "https://makon-khaki.vercel.app/"
 MAKON_ORG = {"@type": "Organization", "@id": SITE + "/projects/makon.html#org", "name": "Makon",
              "description": "AI studio for redesigning a room from one photo: redesign, measured floor plan, 3D model, furniture list and build brief.",
-             "founder": {"@id": PERSON_ID}, "url": SITE + "/projects/makon.html",
-             "sameAs": ["https://github.com/shohruhxamrayev/makon"]}
+             "founder": {"@id": PERSON_ID}, "url": MAKON_LIVE,
+             "sameAs": ["https://makon-khaki.vercel.app/#org", "https://github.com/shohruhxamrayev/makon", SITE + "/projects/makon.html"]}
 WEBSITE = {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": NAME,
            "alternateName": "Shohruh", "inLanguage": "en", "publisher": {"@id": PERSON_ID}, "author": {"@id": PERSON_ID}}
 
@@ -100,7 +101,7 @@ for path in pages:
         graph = [MAKON_ORG,
                  {"@type": "SoftwareApplication", "name": "Makon", "applicationCategory": "DesignApplication", "operatingSystem": "Web",
                   "description": OVERRIDES[path][1], "creator": {"@id": PERSON_ID}, "author": {"@id": PERSON_ID},
-                  "publisher": {"@id": SITE + "/projects/makon.html#org"}, "url": url, "image": img,
+                  "publisher": {"@id": SITE + "/projects/makon.html#org"}, "url": MAKON_LIVE, "image": img,
                   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}},
                  {"@type": "Person", "@id": PERSON_ID, "name": NAME, "url": SITE + "/", "sameAs": SOCIALS}]
     elif path.startswith("essays/"):
