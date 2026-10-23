@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quotes — Shohruh Xamrayev</title>
+<meta name="description" content="Lines that stuck with me, worth keeping close.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-studio-page="quotes">
 
 <header class="site">
   <div class="wrap">
@@ -25,30 +26,16 @@
 </header>
 
 <main class="wrap">
-  <h1 class="page-title" style="margin-top: 20px;">Quotes</h1>
-  <p style="color:var(--muted); margin: -20px 0 32px;">Lines that stuck with me, worth keeping close.</p>
-
-  <div class="entry-list">
-    <div class="entry">
-      <p style="font-style: italic; font-size: 18px; color: var(--ink); margin-bottom: 8px;">"The unexamined life is not worth living."</p>
-      <p class="byline">&mdash; Socrates</p>
-    </div>
-    <div class="entry">
-      <p style="font-style: italic; font-size: 18px; color: var(--ink); margin-bottom: 8px;">"What we think, we become."</p>
-      <p class="byline">&mdash; Buddha</p>
-    </div>
-    <div class="entry">
-      <p style="font-style: italic; font-size: 18px; color: var(--ink); margin-bottom: 8px;">"The only way to do great work is to love what you do."</p>
-      <p class="byline">&mdash; Steve Jobs</p>
-    </div>
-    <div class="entry">
-      <p style="font-style: italic; font-size: 18px; color: var(--ink); margin-bottom: 8px;">"Stay hungry, stay foolish."</p>
-      <p class="byline">&mdash; Steve Jobs</p>
-    </div>
-  </div>
+  <nav class="crumbs st-crumbs" aria-label="Breadcrumb"><a href="../studio.html">Studio</a><span>/</span><span aria-current="page">Quotes</span></nav>
+  <h1 class="page-title st-heading">Quotes</h1>
+  <p class="st-lede">Lines that stuck with me, worth keeping close.</p>
+  <section id="quoteStage" aria-label="Featured quote"></section>
+  <h2 class="st-sub">All quotes</h2>
+  <div class="st-qlist" id="quoteList"></div>
 </main>
 
-
+<script src="../studio-data.js"></script>
+<script src="../studio.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

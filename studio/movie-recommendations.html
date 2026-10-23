@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Movie Recommendations — Shohruh Xamrayev</title>
+<meta name="description" content="Films that stuck with me, worth your time too.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-studio-page="movies">
 
 <header class="site">
   <div class="wrap">
@@ -25,78 +26,22 @@
 </header>
 
 <main class="wrap">
-  <h1 class="page-title" style="margin-top: 20px;">Movie Recommendations</h1>
-  <p style="color:var(--muted); margin: -20px 0 32px;">Films that stuck with me, worth your time too.</p>
-
-  <div class="entry-list">
-    <div class="entry">
-      <div class="details">
-        <h3>Stranger Things</h3>
-        <p class="byline">Created by the Duffer Brothers</p>
-        <p class="stats">IMDb: 8.6/10</p>
-        <p class="note">A love letter to 80s sci-fi and horror &mdash; a small Indiana town, a missing kid, and a growing tangle of government secrets and things that shouldn't exist.</p>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="details">
-        <h3>Interstellar</h3>
-        <p class="byline">Directed by Christopher Nolan</p>
-        <p class="stats">IMDb: 8.7/10</p>
-        <p class="note">A dying Earth, a father-daughter bond stretched across galaxies, and one of the most emotionally devastating uses of time dilation in film.</p>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="details">
-        <h3>Game of Thrones</h3>
-        <p class="byline">Created by David Benioff &amp; D. B. Weiss</p>
-        <p class="stats">IMDb: 9.2/10</p>
-        <p class="note">Power, politics, and war across the Seven Kingdoms &mdash; ruthless in how it treats its characters, and unforgettable because of it.</p>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="details">
-        <h3>Inception</h3>
-        <p class="byline">Directed by Christopher Nolan</p>
-        <p class="stats">IMDb: 8.8/10</p>
-        <p class="note">A heist movie set inside dreams within dreams. Endlessly rewatchable, and the kind of film that rewards paying close attention to every detail.</p>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="details">
-        <h3>The Odyssey</h3>
-        <p class="byline">Directed by Christopher Nolan</p>
-        <p class="stats">IMDb Top 250 (2026)</p>
-        <p class="note">Nolan's adaptation of Homer's epic, following Odysseus's long, perilous journey home after the Trojan War. Shot entirely on IMAX 70mm &mdash; one of his most acclaimed films yet.</p>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="details">
-        <h3>Friends</h3>
-        <p class="byline">Created by David Crane &amp; Marta Kauffman</p>
-        <p class="stats">IMDb: 8.9/10</p>
-        <p class="note">Six friends navigating life, love, and coffee shops in Manhattan. Pure comfort TV &mdash; a show I can rewatch endlessly without ever getting tired of it.</p>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="details">
-        <h3>The Dark Knight</h3>
-        <p class="byline">Directed by Christopher Nolan</p>
-        <p class="stats">IMDb: 9.0/10</p>
-        <p class="note">Less a superhero movie than a crime saga about order versus chaos. Heath Ledger's Joker is one of the greatest villain performances ever put on screen.</p>
-      </div>
-    </div>
-    <div class="entry">
-      <div class="details">
-        <h3>Fight Club</h3>
-        <p class="byline">Directed by David Fincher</p>
-        <p class="stats">IMDb: 8.8/10</p>
-        <p class="note">A sharp, unsettling look at masculinity, consumerism, and identity. The kind of movie that hits differently on a second watch once you know where it's going.</p>
-      </div>
-    </div>
+  <nav class="crumbs st-crumbs" aria-label="Breadcrumb"><a href="../studio.html">Studio</a><span>/</span><span aria-current="page">Movies</span></nav>
+  <h1 class="page-title st-heading">Movie Recommendations</h1>
+  <p class="st-lede">Films that stuck with me, worth your time too. Tap a poster to read why.</p>
+  <div class="st-stats" id="movieStats"></div>
+  <div class="st-mvbar">
+    <div class="jr-tabs st-mvtabs" id="movieTabs" role="group" aria-label="Filter"></div>
+    <label class="st-sort">Sort
+      <select id="movieSort"><option value="mine">My order</option><option value="rating">IMDb rating</option><option value="title">Title</option></select>
+    </label>
   </div>
+  <div class="st-mvgrid" id="movieGrid"></div>
+  <p class="st-fine">Posters are generated artwork, not the official ones.</p>
 </main>
 
-
+<script src="../studio-data.js"></script>
+<script src="../studio.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

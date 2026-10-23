@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rules — Shohruh Xamrayev</title>
+<meta name="description" content="A few things I try to live by.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-studio-page="rules">
 
 <header class="site">
   <div class="wrap">
@@ -25,18 +26,14 @@
 </header>
 
 <main class="wrap">
-  <h1 class="page-title" style="margin-top: 20px;">Rules</h1>
-  <p style="color:var(--muted); margin: -20px 0 32px;">A few things I try to live by.</p>
-
-  <div class="entry-list">
-    <div class="entry">
-      <h3>Rule 1</h3>
-      <p>Treat others the way you want to be treated.</p>
-    </div>
-  </div>
+  <nav class="crumbs st-crumbs" aria-label="Breadcrumb"><a href="../studio.html">Studio</a><span>/</span><span aria-current="page">Rules</span></nav>
+  <h1 class="page-title st-heading">Rules</h1>
+  <p class="st-lede">A few things I try to live by.</p>
+  <ol class="st-rules" id="ruleList"></ol>
 </main>
 
-
+<script src="../studio-data.js"></script>
+<script src="../studio.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>
