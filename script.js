@@ -10,8 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.querySelector('nav.primary');
   if (!toggle || !nav) return;
-  toggle.addEventListener('click', function () {
-    nav.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
+  toggle.setAttribute('aria-expanded', 'false');
+  function setOpen(on) {
+    nav.classList.toggle('open', on);
+    toggle.classList.toggle('open', on);
+    document.body.classList.toggle('nav-open', on);
+    toggle.setAttribute('aria-expanded', on ? 'true' : 'false');
+  }
+  toggle.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!nav.classList.contains('open')); });
+  document.addEventListener('click', function (e) { if (nav.classList.contains('open') && !e.target.closest('nav.primary')) setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); toggle.focus(); } });
+  nav.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
 });
