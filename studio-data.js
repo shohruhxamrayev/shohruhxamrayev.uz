@@ -8,6 +8,8 @@ const studioData = {
   ],
 
   // kind: "film" or "series". rating: IMDb score as a number, or leave it out and use ratingNote.
+  // poster (optional): path to a poster image, e.g. "studio/posters/interstellar.jpg".
+  //   Without it, the page draws a generated poster instead.
   movies: [
     { title: "Stranger Things", kind: "series", credit: "Created by the Duffer Brothers", rating: 8.6,
       note: "A love letter to 80s sci-fi and horror — a small Indiana town, a missing kid, and a growing tangle of government secrets and things that shouldn't exist." },

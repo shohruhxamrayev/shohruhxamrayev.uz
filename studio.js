@@ -3,6 +3,7 @@
   'use strict';
   if (typeof studioData === 'undefined') return;
   var D = studioData;
+  var ROOT = document.body && document.body.getAttribute('data-studio-page') !== 'index' ? '../' : '';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function $(s, r) { return (r || document).querySelector(s); }
@@ -44,6 +45,8 @@
       '<span class="st-poster-kind">' + (m.kind === 'series' ? 'Series' : 'Film') + '</span>' +
       '<span class="st-poster-foot"><span class="st-poster-title">' + esc(m.title) + '</span>' +
       (small ? '' : '<span class="st-poster-credit">' + esc(m.credit.replace(/^(Directed|Created) by /, '')) + '</span>') + '</span>' +
+      // A real poster, when the data has one, sits on top of the generated design (which shows if the image fails).
+      (m.poster ? '<img class="st-poster-img" src="' + esc(ROOT + m.poster) + '" alt="' + esc(m.title) + ' poster" loading="lazy" onerror="this.remove()">' : '') +
     '</span>';
   }
   function ratingBadge(m) {
@@ -186,6 +189,8 @@
   function initMovies() {
     var mv = D.movies.map(function (m, i) { m._i = i; return m; });
     var grid = $('#movieGrid'), stats = $('#movieStats'), tabs = $('#movieTabs'), sortSel = $('#movieSort');
+    var fine = $('#movieFine');
+    if (fine) fine.hidden = mv.every(function (m) { return m.poster; });
     var films = mv.filter(function (m) { return m.kind !== 'series'; }).length;
     var rated = mv.filter(function (m) { return typeof m.rating === 'number'; });
     var avg = rated.length ? rated.reduce(function (s, m) { return s + m.rating; }, 0) / rated.length : 0;
