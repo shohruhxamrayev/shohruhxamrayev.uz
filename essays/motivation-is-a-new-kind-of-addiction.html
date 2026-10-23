@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-essay-page="essay">
 
 <header class="site">
   <div class="wrap">
@@ -24,14 +24,22 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../essays.html" style="font-family: var(--sans); font-size: 14px;">&larr; Essays</a></p>
-  <h1 class="page-title" style="margin-bottom: 6px;">Motivation Is a New Kind of Addiction</h1>
-  <p style="color:var(--muted); font-family: var(--sans); font-size: 14px; margin: 0 0 32px;">March 23, 2026 &bull; 2 min read</p>
+<main class="wrap es-page">
+  <article class="es-article">
+    <nav class="crumbs es-crumbs" aria-label="Breadcrumb"><a href="../essays.html">Essays</a><span>/</span><span aria-current="page">2026</span></nav>
 
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Scrolling_on_phone.jpg" alt="A person scrolling through a smartphone" style="width: 100%; border-radius: 10px; margin-bottom: 32px;">
+    <header class="es-head">
+      <p class="es-kicker">Essay <span class="bk-dot">&middot;</span> 2 min read</p>
+      <h1 class="es-title">Motivation Is a New Kind of Addiction</h1>
+      <p class="es-meta"><time>March 23, 2026</time><span class="bk-dot">&middot;</span>202 words</p>
+    </header>
 
-  <div class="bio">
+    <figure class="es-fig">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Scrolling_on_phone.jpg" alt="A person scrolling through a smartphone">
+      <figcaption>A person scrolling through a smartphone</figcaption>
+    </figure>
+
+    <div class="es-body">
     <p>You save hundreds of motivational videos every day, follow countless successful people, and yet nothing in your life changes. Why? Because your brain can't tell the difference between planning to do something and actually doing it.</p>
 
     <p>When you watch a 5-minute video about waking up early, your brain releases dopamine as if you'd actually done it yourself. As a result, the need to take real action disappears.</p>
@@ -41,9 +49,19 @@
     <p>Be honest with yourself. If your current peaceful life and rest actually matter more to you, it's better to admit that. Don't torture yourself with fake motivation.</p>
 
     <p>You're not actually afraid of failure. What you're afraid of is discovering that you don't actually want to suffer for success. You've trained your brain to believe the lie that "watching is the same as participating." You need to stop collecting information and start taking real action, starting today.</p>
-  </div>
+  
+    </div>
+
+    <div class="es-end">
+      <span class="es-end-mark" aria-hidden="true">&#10086;</span>
+      <button type="button" class="es-share" data-copy-link>Copy link to this essay</button>
+    </div>
+
+    <nav class="es-nav" id="essayNav" aria-label="More essays"></nav>
+  </article>
 </main>
 
+<script src="../essays.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

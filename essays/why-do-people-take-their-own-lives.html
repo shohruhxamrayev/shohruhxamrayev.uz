@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-essay-page="essay">
 
 <header class="site">
   <div class="wrap">
@@ -24,14 +24,22 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../essays.html" style="font-family: var(--sans); font-size: 14px;">&larr; Essays</a></p>
-  <h1 class="page-title" style="margin-bottom: 6px;">Why Do People Take Their Own Lives?</h1>
-  <p style="color:var(--muted); font-family: var(--sans); font-size: 14px; margin: 0 0 32px;">December 15, 2025 &bull; 3 min read</p>
+<main class="wrap es-page">
+  <article class="es-article">
+    <nav class="crumbs es-crumbs" aria-label="Breadcrumb"><a href="../essays.html">Essays</a><span>/</span><span aria-current="page">2025</span></nav>
 
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fork_in_the_road_-_geograph.org.uk_-_1355424.jpg" alt="A quiet fork in a country road, with one path going left and the other right" style="width: 100%; border-radius: 10px; margin-bottom: 32px;">
+    <header class="es-head">
+      <p class="es-kicker">Essay <span class="bk-dot">&middot;</span> 3 min read</p>
+      <h1 class="es-title">Why Do People Take Their Own Lives?</h1>
+      <p class="es-meta"><time>December 15, 2025</time><span class="bk-dot">&middot;</span>455 words</p>
+    </header>
 
-  <div class="bio">
+    <figure class="es-fig">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fork_in_the_road_-_geograph.org.uk_-_1355424.jpg" alt="A quiet fork in a country road, with one path going left and the other right">
+      <figcaption>A quiet fork in a country road, with one path going left and the other right</figcaption>
+    </figure>
+
+    <div class="es-body">
     <p>Look, people don't take their own lives simply because problems come up. People take their own lives when their lives become unbearably hard, and here's the delicate part: they see it as their own fault. They can't separate the hardship they're feeling from their own sense of personal responsibility, and that's what drives an overwhelming sense of shame. So what's actually happening here?</p>
 
     <p>See, when I say our society is individualistic, what I mean is that people believe they're fully in control of their own life story. They assume that whatever happens to them is directly tied to who they are and what they've done. But it hasn't always been this way. For long stretches of history, people didn't tie the outcomes of their lives to themselves nearly as tightly. You can see this through how we talk about finances. For example, in old English, a poor person was called "unfortunate." Let's break that word down: "unfortunate" contains the word "fortuna." Fortuna was the goddess of luck and fate for the Romans. Romans would bring offerings to Fortuna, essentially pleading, "This isn't me, this is outside forces." That might sound strange to us now.</p>
@@ -43,9 +51,19 @@
     <p>We believe that people act, and those actions lead to either success or failure. That's part of why people take their own lives &mdash; because in their hardest moments, they conclude: "Nothing except me can explain what's happening to me."</p>
 
     <p>In reality, life is far more complicated than that. I'm not saying this belief is true &mdash; but it's how a lot of people end up seeing the world.</p>
-  </div>
+  
+    </div>
+
+    <div class="es-end">
+      <span class="es-end-mark" aria-hidden="true">&#10086;</span>
+      <button type="button" class="es-share" data-copy-link>Copy link to this essay</button>
+    </div>
+
+    <nav class="es-nav" id="essayNav" aria-label="More essays"></nav>
+  </article>
 </main>
 
+<script src="../essays.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

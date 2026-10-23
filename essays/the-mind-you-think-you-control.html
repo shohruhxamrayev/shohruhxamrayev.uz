@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-essay-page="essay">
 
 <header class="site">
   <div class="wrap">
@@ -24,14 +24,22 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../essays.html" style="font-family: var(--sans); font-size: 14px;">&larr; Essays</a></p>
-  <h1 class="page-title" style="margin-bottom: 6px;">The Mind You Think You Control</h1>
-  <p style="color:var(--muted); font-family: var(--sans); font-size: 14px; margin: 0 0 32px;">April 24, 2026 &bull; 2 min read</p>
+<main class="wrap es-page">
+  <article class="es-article">
+    <nav class="crumbs es-crumbs" aria-label="Breadcrumb"><a href="../essays.html">Essays</a><span>/</span><span aria-current="page">2026</span></nav>
 
-  <img src="themind.jpg" alt="A retro illustration of a hand reaching for a VCR, rendered half as a wireframe mesh" style="width: 100%; border-radius: 10px; margin-bottom: 32px;">
+    <header class="es-head">
+      <p class="es-kicker">Essay <span class="bk-dot">&middot;</span> 2 min read</p>
+      <h1 class="es-title">The Mind You Think You Control</h1>
+      <p class="es-meta"><time>April 24, 2026</time><span class="bk-dot">&middot;</span>345 words</p>
+    </header>
 
-  <div class="bio">
+    <figure class="es-fig">
+      <img src="themind.jpg" alt="A retro illustration of a hand reaching for a VCR, rendered half as a wireframe mesh">
+      <figcaption>A retro illustration of a hand reaching for a VCR, rendered half as a wireframe mesh</figcaption>
+    </figure>
+
+    <div class="es-body">
     <p>In neuroscience we use a tool called Transcranial Magnetic Stimulation (TMS), to understand what different parts of the brain do. When I first learned about it, it felt like magic. You hold a magnetic coil near a person's head, send a pulse, and for a short moment that part of the brain stops working. It is one of the few ways we can make causal claims about brain function. If turning off an area changes what a person can do, we know that area is necessary for that ability.</p>
 
     <p>The brain works through tiny electrical signals created by chemical reactions inside its cells. These signals form patterns that let us see, feel, speak, move, and think. With TMS we can temporarily disrupt those patterns in a very specific spot. If you stimulate the visual cortex, a person might suddenly have trouble seeing colors. If you stimulate the motor cortex, their hand might not move even if they want it to. In experiments by Alvaro Pascual-Leone, stimulating the motor cortex even made people's fingers move without their intention.</p>
@@ -39,10 +47,20 @@
     <p>Some of the most interesting work has been in the social domain. In a study by Liane Young and her team at MIT, scientists used TMS to reduce activity in the right temporo parietal junction, a region involved in moral reasoning. Participants were then asked to judge moral situations. Even though part of their brain was temporarily disabled, they still believed they were making thoughtful and independent moral judgments. They did not know that their brain's ability to process certain kinds of information was limited, so they explained their choices as if nothing unusual had happened. Other experiments have shown similar effects in trust and cooperation games. Disabling certain areas changes how people behave socially, yet they continue to believe their decisions are entirely their own.</p>
 
     <p>It is humbling to learn how easily our perceptions and choices can be altered without us noticing. The things we see, the judgments we make, and the relationships we value all come from chemical reactions in the brain that produce electrical signals.</p>
-  </div>
+  
+    </div>
+
+    <div class="es-end">
+      <span class="es-end-mark" aria-hidden="true">&#10086;</span>
+      <button type="button" class="es-share" data-copy-link>Copy link to this essay</button>
+    </div>
+
+    <nav class="es-nav" id="essayNav" aria-label="More essays"></nav>
+  </article>
 </main>
 
 
+<script src="../essays.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

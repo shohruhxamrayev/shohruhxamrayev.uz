@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-essay-page="essay">
 
 <header class="site">
   <div class="wrap">
@@ -24,14 +24,22 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../essays.html" style="font-family: var(--sans); font-size: 14px;">&larr; Essays</a></p>
-  <h1 class="page-title" style="margin-bottom: 6px;">What Is Character, Really?</h1>
-  <p style="color:var(--muted); font-family: var(--sans); font-size: 14px; margin: 0 0 32px;">July 10, 2025 &bull; 3 min read</p>
+<main class="wrap es-page">
+  <article class="es-article">
+    <nav class="crumbs es-crumbs" aria-label="Breadcrumb"><a href="../essays.html">Essays</a><span>/</span><span aria-current="page">2025</span></nav>
 
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Thinker,_Rodin.jpg" alt="Rodin's sculpture The Thinker, a bronze figure seated in contemplation" style="width: 100%; border-radius: 10px; margin-bottom: 32px;">
+    <header class="es-head">
+      <p class="es-kicker">Essay <span class="bk-dot">&middot;</span> 3 min read</p>
+      <h1 class="es-title">What Is Character, Really?</h1>
+      <p class="es-meta"><time>July 10, 2025</time><span class="bk-dot">&middot;</span>493 words</p>
+    </header>
 
-  <div class="bio">
+    <figure class="es-fig">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Thinker,_Rodin.jpg" alt="Rodin's sculpture The Thinker, a bronze figure seated in contemplation">
+      <figcaption>Rodin's sculpture The Thinker, a bronze figure seated in contemplation</figcaption>
+    </figure>
+
+    <div class="es-body">
     <p>Lately I've been thinking a lot about one thing: why is it that as people gain more knowledge, their character doesn't seem to rise with it?</p>
 
     <p>Finding information today is remarkably easy. Anyone can learn a language, learn to code, or read through hundreds of books in just a few months. But character isn't something you can download from the internet.</p>
@@ -71,9 +79,19 @@
     <p>In the end, what gets weighed on the scale of life isn't the weight of our knowledge, but the beauty of our conduct. In a crowd that hides a lack of upbringing behind the mask of "sincerity," and sells insult as "truth," holding on to your character is the greatest act of courage there is.</p>
 
     <p>Look around you: behind the screens, everyone seems wise, everyone seems right. But on the stage of real life, basic humanity is what's missing. So let each of us ask ourselves: has what we learned today made us merely informed, or has it made us enlightened? Are we the noise dragging society's character down, or the quiet steadily lifting it up? Remember, character is being able to answer to your own conscience and upbringing even when no one is watching. Let's be people who heal the world with their character, not just impress it with their knowledge.</p>
-  </div>
+  
+    </div>
+
+    <div class="es-end">
+      <span class="es-end-mark" aria-hidden="true">&#10086;</span>
+      <button type="button" class="es-share" data-copy-link>Copy link to this essay</button>
+    </div>
+
+    <nav class="es-nav" id="essayNav" aria-label="More essays"></nav>
+  </article>
 </main>
 
+<script src="../essays.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

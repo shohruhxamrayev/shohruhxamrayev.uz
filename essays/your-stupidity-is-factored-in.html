@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-essay-page="essay">
 
 <header class="site">
   <div class="wrap">
@@ -24,14 +24,22 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../essays.html" style="font-family: var(--sans); font-size: 14px;">&larr; Essays</a></p>
-  <h1 class="page-title" style="margin-bottom: 6px;">Your Stupidity Is Factored In</h1>
-  <p style="color:var(--muted); font-family: var(--sans); font-size: 14px; margin: 0 0 32px;">February 15, 2026 &bull; 1 min read</p>
+<main class="wrap es-page">
+  <article class="es-article">
+    <nav class="crumbs es-crumbs" aria-label="Breadcrumb"><a href="../essays.html">Essays</a><span>/</span><span aria-current="page">2026</span></nav>
 
-  <img src="yourstupidityfactoredin.jpg" alt="A black-and-white photograph of a surfer riding a massive wave, watched by a crowd of onlookers" style="width: 100%; border-radius: 10px; margin-bottom: 32px;">
+    <header class="es-head">
+      <p class="es-kicker">Essay <span class="bk-dot">&middot;</span> 1 min read</p>
+      <h1 class="es-title">Your Stupidity Is Factored In</h1>
+      <p class="es-meta"><time>February 15, 2026</time><span class="bk-dot">&middot;</span>179 words</p>
+    </header>
 
-  <div class="bio">
+    <figure class="es-fig">
+      <img src="yourstupidityfactoredin.jpg" alt="A black-and-white photograph of a surfer riding a massive wave, watched by a crowd of onlookers">
+      <figcaption>A black-and-white photograph of a surfer riding a massive wave, watched by a crowd of onlookers</figcaption>
+    </figure>
+
+    <div class="es-body">
     <p>Lately I've been facing challenges where there's no clear direction, maybe no right answer at all. My solution to working with the unknown has been to take a lot of small bets. Each one has limited downside but potentially high upside. I'm not staking everything on one big move. So far it's worked well. The losses are small and some of the wins have been very fruitful.</p>
 
     <p>But not every challenge can be broken into small bets. Sometimes I have to make the big call with incomplete information, and that's where my system crumbles.</p>
@@ -39,9 +47,19 @@
     <p>In those moments I start questioning whether I have what it takes to navigate what's in front of me. I'm afraid of making a stupid mistake that I can't walk back. Then I found this comforting saying: "When God called you to it, He already factored in your stupidity."</p>
 
     <p>I think beyond strategy we need some faith. If a challenge is in front of us, we're supposed to be capable of tackling it. Even the stupid moves along the way. Otherwise it wouldn't be there.</p>
-  </div>
+  
+    </div>
+
+    <div class="es-end">
+      <span class="es-end-mark" aria-hidden="true">&#10086;</span>
+      <button type="button" class="es-share" data-copy-link>Copy link to this essay</button>
+    </div>
+
+    <nav class="es-nav" id="essayNav" aria-label="More essays"></nav>
+  </article>
 </main>
 
+<script src="../essays.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

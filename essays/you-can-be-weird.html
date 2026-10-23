@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-essay-page="essay">
 
 <header class="site">
   <div class="wrap">
@@ -24,14 +24,22 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../essays.html" style="font-family: var(--sans); font-size: 14px;">&larr; Essays</a></p>
-  <h1 class="page-title" style="margin-bottom: 6px;">You Can Be Weird or Do Whatever You Want</h1>
-  <p style="color:var(--muted); font-family: var(--sans); font-size: 14px; margin: 0 0 32px;">June 27, 2026 &bull; 3 min read</p>
+<main class="wrap es-page">
+  <article class="es-article">
+    <nav class="crumbs es-crumbs" aria-label="Breadcrumb"><a href="../essays.html">Essays</a><span>/</span><span aria-current="page">2026</span></nav>
 
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Simple_sine_wave.svg" alt="A simple sine wave diagram on a grid" style="width: 100%; border-radius: 10px; margin-bottom: 32px; background: #fff; padding: 24px;">
+    <header class="es-head">
+      <p class="es-kicker">Essay <span class="bk-dot">&middot;</span> 3 min read</p>
+      <h1 class="es-title">You Can Be Weird or Do Whatever You Want</h1>
+      <p class="es-meta"><time>June 27, 2026</time><span class="bk-dot">&middot;</span>446 words</p>
+    </header>
 
-  <div class="bio">
+    <figure class="es-fig">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Simple_sine_wave.svg" alt="A simple sine wave diagram on a grid">
+      <figcaption>A simple sine wave diagram on a grid</figcaption>
+    </figure>
+
+    <div class="es-body">
     <p><em>(As long as we walk our own path, we're allowed to be as weird as we want.)</em></p>
 
     <p>Let me explain why I'm saying this.</p>
@@ -55,9 +63,19 @@
     <p>So I think it's worth thoroughly learning both the "not allowed" and the "obligatory" (I don't know how successful my efforts actually are, but I'm trying to do something about it). Having grown up in an Uzbek family, I already know the "not allowed" side quite well &mdash; what I need to learn more of is the "obligatory" side.</p>
 
     <p>And honestly, I still don't know how I'm going to build the whole 3D structure of my life. But I hope most of it will be built on one thing &mdash; knowledge.</p>
-  </div>
+  
+    </div>
+
+    <div class="es-end">
+      <span class="es-end-mark" aria-hidden="true">&#10086;</span>
+      <button type="button" class="es-share" data-copy-link>Copy link to this essay</button>
+    </div>
+
+    <nav class="es-nav" id="essayNav" aria-label="More essays"></nav>
+  </article>
 </main>
 
+<script src="../essays.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

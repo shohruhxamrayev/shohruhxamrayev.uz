@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-essay-page="essay">
 
 <header class="site">
   <div class="wrap">
@@ -24,14 +24,22 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../essays.html" style="font-family: var(--sans); font-size: 14px;">&larr; Essays</a></p>
-  <h1 class="page-title" style="margin-bottom: 6px;">Consistency, and Not Giving Up</h1>
-  <p style="color:var(--muted); font-family: var(--sans); font-size: 14px; margin: 0 0 32px;">January 12, 2026 &bull; 3 min read</p>
+<main class="wrap es-page">
+  <article class="es-article">
+    <nav class="crumbs es-crumbs" aria-label="Breadcrumb"><a href="../essays.html">Essays</a><span>/</span><span aria-current="page">2026</span></nav>
 
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_trail_up_a_mountain_in_Norway.JPG" alt="A hiking trail winding up a mountain" style="width: 100%; border-radius: 10px; margin-bottom: 32px;">
+    <header class="es-head">
+      <p class="es-kicker">Essay <span class="bk-dot">&middot;</span> 3 min read</p>
+      <h1 class="es-title">Consistency, and Not Giving Up</h1>
+      <p class="es-meta"><time>January 12, 2026</time><span class="bk-dot">&middot;</span>482 words</p>
+    </header>
 
-  <div class="bio">
+    <figure class="es-fig">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_trail_up_a_mountain_in_Norway.JPG" alt="A hiking trail winding up a mountain">
+      <figcaption>A hiking trail winding up a mountain</figcaption>
+    </figure>
+
+    <div class="es-body">
     <p>Before starting anything &mdash; sports, reading, learning a language &mdash; the excitement and motivation lasts about a week at most. After that first week, we stop feeling the same rush we did at the start. That's the point where most people abandon whatever they started.</p>
 
     <p>Strava, the world's largest running and fitness app, analyzed data from millions of users. According to their findings, the largest share of people who start running in January with new goals quit sometime in the second week of the month. That day has come to be known worldwide as "Quitters' Day." In other words, most people's willpower only lasts about 10 to 12 days.</p>
@@ -51,9 +59,19 @@
     <p>Here's the logic: if you did the challenge secretly, without telling anyone, and then quit, all you'd lose is something abstract called "health" &mdash; and the brain adjusts to that loss easily.</p>
 
     <p>But once you've announced it, you're now risking something else: people's trust in you, your reputation as someone who keeps their word and follows through. The brain treats that kind of loss as genuinely painful &mdash; painful enough that it will drag you out the door and onto the street to walk, whether you feel like it or not.</p>
-  </div>
+  
+    </div>
+
+    <div class="es-end">
+      <span class="es-end-mark" aria-hidden="true">&#10086;</span>
+      <button type="button" class="es-share" data-copy-link>Copy link to this essay</button>
+    </div>
+
+    <nav class="es-nav" id="essayNav" aria-label="More essays"></nav>
+  </article>
 </main>
 
+<script src="../essays.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

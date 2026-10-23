@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-essay-page="index">
 
 <header class="site">
   <div class="wrap">
@@ -24,8 +24,21 @@
   </div>
 </header>
 
-<main class="wrap">
-  <h1 class="page-title">Essays</h1>
+<main class="wrap es-index">
+  <h1 class="page-title es-index-title">Essays</h1>
+  <p class="es-index-lede">Thinking out loud, mostly so I can understand things a little better myself.</p>
+  <div class="es-stats" id="essayStats"></div>
+
+  <div id="essayFeature"></div>
+
+  <div class="es-tools">
+    <label class="col-search es-search">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input type="search" id="essaySearch" placeholder="Search essays" aria-label="Search essays" autocomplete="off">
+    </label>
+    <button type="button" class="es-random" id="essayRandom">Surprise me <span aria-hidden="true">&#8635;</span></button>
+  </div>
+  <p class="es-empty" id="essayEmpty" hidden>No essays match that search.</p>
 
   <h2 class="essay-year-heading">2026</h2>
   <div class="essay-list">
@@ -186,6 +199,7 @@
 </footer>
 
 
+<script src="essays.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
