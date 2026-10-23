@@ -23,7 +23,7 @@ MAKON_LIVE = "https://makon-khaki.vercel.app/"
 MAKON_ORG = {"@type": "Organization", "@id": SITE + "/projects/makon.html#org", "name": "Makon",
              "description": "AI studio for redesigning a room from one photo: redesign, measured floor plan, 3D model, furniture list and build brief.",
              "founder": {"@id": PERSON_ID}, "url": MAKON_LIVE,
-             "sameAs": ["https://makon-khaki.vercel.app/#org", "https://github.com/shohruhxamrayev/makon", SITE + "/projects/makon.html"]}
+             "sameAs": ["https://github.com/shohruhxamrayev/makon", SITE + "/projects/makon.html"]}
 WEBSITE = {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": NAME,
            "alternateName": "Shohruh", "inLanguage": "en", "publisher": {"@id": PERSON_ID}, "author": {"@id": PERSON_ID}}
 
