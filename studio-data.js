@@ -11,21 +11,21 @@ const studioData = {
   // poster (optional): path to a poster image, e.g. "studio/posters/interstellar.jpg".
   //   Without it, the page draws a generated poster instead.
   movies: [
-    { title: "Stranger Things", kind: "series", credit: "Created by the Duffer Brothers", rating: 8.6,
+    { title: "Stranger Things", poster: "studio/posters/stranger-things.jpg", kind: "series", credit: "Created by the Duffer Brothers", rating: 8.6,
       note: "A love letter to 80s sci-fi and horror — a small Indiana town, a missing kid, and a growing tangle of government secrets and things that shouldn't exist." },
-    { title: "Interstellar", kind: "film", credit: "Directed by Christopher Nolan", rating: 8.7,
+    { title: "Interstellar", poster: "studio/posters/interstellar.jpg", kind: "film", credit: "Directed by Christopher Nolan", rating: 8.7,
       note: "A dying Earth, a father-daughter bond stretched across galaxies, and one of the most emotionally devastating uses of time dilation in film." },
-    { title: "Game of Thrones", kind: "series", credit: "Created by David Benioff & D. B. Weiss", rating: 9.2,
+    { title: "Game of Thrones", poster: "studio/posters/game-of-thrones.jpg", kind: "series", credit: "Created by David Benioff & D. B. Weiss", rating: 9.2,
       note: "Power, politics, and war across the Seven Kingdoms — ruthless in how it treats its characters, and unforgettable because of it." },
-    { title: "Inception", kind: "film", credit: "Directed by Christopher Nolan", rating: 8.8,
+    { title: "Inception", poster: "studio/posters/inception.jpg", kind: "film", credit: "Directed by Christopher Nolan", rating: 8.8,
       note: "A heist movie set inside dreams within dreams. Endlessly rewatchable, and the kind of film that rewards paying close attention to every detail." },
-    { title: "The Odyssey", kind: "film", credit: "Directed by Christopher Nolan", ratingNote: "IMDb Top 250 (2026)",
+    { title: "The Odyssey", poster: "studio/posters/the-odyssey.jpg", kind: "film", credit: "Directed by Christopher Nolan", ratingNote: "IMDb Top 250 (2026)",
       note: "Nolan's adaptation of Homer's epic, following Odysseus's long, perilous journey home after the Trojan War. Shot entirely on IMAX 70mm — one of his most acclaimed films yet." },
-    { title: "Friends", kind: "series", credit: "Created by David Crane & Marta Kauffman", rating: 8.9,
+    { title: "Friends", poster: "studio/posters/friends.jpg", kind: "series", credit: "Created by David Crane & Marta Kauffman", rating: 8.9,
       note: "Six friends navigating life, love, and coffee shops in Manhattan. Pure comfort TV — a show I can rewatch endlessly without ever getting tired of it." },
-    { title: "The Dark Knight", kind: "film", credit: "Directed by Christopher Nolan", rating: 9.0,
+    { title: "The Dark Knight", poster: "studio/posters/the-dark-knight.jpg", kind: "film", credit: "Directed by Christopher Nolan", rating: 9.0,
       note: "Less a superhero movie than a crime saga about order versus chaos. Heath Ledger's Joker is one of the greatest villain performances ever put on screen." },
-    { title: "Fight Club", kind: "film", credit: "Directed by David Fincher", rating: 8.8,
+    { title: "Fight Club", poster: "studio/posters/fight-club.jpg", kind: "film", credit: "Directed by David Fincher", rating: 8.8,
       note: "A sharp, unsettling look at masculinity, consumerism, and identity. The kind of movie that hits differently on a second watch once you know where it's going." }
   ],
 
