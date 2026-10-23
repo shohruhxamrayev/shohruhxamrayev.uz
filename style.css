@@ -79,8 +79,9 @@ nav.primary a.active {
   border-color: var(--accent);
 }
 
-main {
-  padding-bottom: 80px;
+main,
+main.wrap {
+  padding-bottom: 96px;
 }
 
 .hero {
@@ -758,8 +759,7 @@ main {
 
 footer.site {
   border-top: 1px solid var(--line);
-  padding: 28px 0 40px;
-  margin-top: 40px;
+  padding: 32px 0 56px;
 }
 
 footer.site .wrap {
@@ -2754,4 +2754,8 @@ html.jv-lock { overflow: hidden; }
   .st-ars-items { grid-template-columns: 1fr; }
   .st-ars-hero { grid-template-columns: 1fr; }
   .st-ars-art { max-width: 220px; }
+}
+
+@media (max-width: 560px) {
+  main, main.wrap { padding-bottom: 72px; }
 }
