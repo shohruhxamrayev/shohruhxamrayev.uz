@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Little Life — Shohruh Xamrayev</title>
+<meta name="description" content="Four friends in New York, and the trauma one of them carries in silence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-books-page="book" data-slug="a-little-life">
 
 <header class="site">
   <div class="wrap">
@@ -24,27 +25,13 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../books.html" style="font-family: var(--sans); font-size: 14px;">&larr; Books</a></p>
-  <div class="book-detail-inner" style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; margin-bottom: 32px;">
-    <img src="https://covers.openlibrary.org/b/isbn/9780804172707-L.jpg" alt="A Little Life cover" style="width:128px; height:184px; border-radius:6px; object-fit:cover; box-shadow: 0 1px 2px rgba(63, 49, 34, 0.12);">
-    <div>
-      <h1 class="page-title" style="margin-bottom: 6px;">A Little Life</h1>
-      <p style="color:var(--muted); margin: 0 0 4px;">Hanya Yanagihara</p>
-      <p style="font-family: var(--mono); font-size: 13px; color: var(--accent); margin: 0;">Read: July 11, 2026 &bull; Rating: 7/10</p>
-    </div>
-  </div>
-
-  <div class="bio">
-    <p>Assault. Abuse. Trauma. Childhood. Coping mechanisms. I wish these words would not come together ever again. Unfortunately, this is life. Reading this book convinced me further that the body keeps the score &mdash; and not just for the main character, but for every character in it. They've all carried early trauma that shaped them in ways that are hard to undo, chemically and emotionally.</p>
-
-    <p>Alongside trauma, people develop coping mechanisms &mdash; some healthier than others. I run when I'm in distress. Others sleep, eat, or turn to things that hurt them physically in the short term. We're complicated that way.</p>
-
-    <p>The book is beautiful and heavy. I read it at a low point, and it became a kind of companion in sorrow &mdash; a "things happen, be gentle with yourself" kind of book. Not for everyone, especially if you're easily triggered by trauma on the page, but worth trying. We all have a little life &mdash; sometimes easier, sometimes harder to live. But we always live. And we want others to keep living too.</p>
-  </div>
+<main class="wrap books-page">
+  <div id="shelf" class="shelf-compact"></div>
+  <article class="bk-article" id="bookArticle"></article>
 </main>
 
-
+<script src="../books-data.js"></script>
+<script src="../books-shelf.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

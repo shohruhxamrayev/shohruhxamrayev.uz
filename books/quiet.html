@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiet — Shohruh Xamrayev</title>
+<meta name="description" content="A case for the value of introversion in a world built for extroverts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-books-page="book" data-slug="quiet">
 
 <header class="site">
   <div class="wrap">
@@ -24,27 +25,13 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../books.html" style="font-family: var(--sans); font-size: 14px;">&larr; Books</a></p>
-  <div class="book-detail-inner" style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; margin-bottom: 32px;">
-    <img src="https://covers.openlibrary.org/b/isbn/9780307352156-L.jpg" alt="Quiet cover" style="width:128px; height:184px; border-radius:6px; object-fit:cover; box-shadow: 0 1px 2px rgba(63, 49, 34, 0.12);">
-    <div>
-      <h1 class="page-title" style="margin-bottom: 6px;">Quiet</h1>
-      <p style="color:var(--muted); margin: 0 0 4px;">Susan Cain</p>
-      <p style="font-family: var(--mono); font-size: 13px; color: var(--accent); margin: 0;">Read: November 27, 2025 &bull; Rating: 7/10</p>
-    </div>
-  </div>
-
-  <div class="bio">
-    <p>How do introverts function in a world built for extroverts? Is it really that overwhelming, or are we overcomplicating it? Being introverted means having a more sensitive nervous system &mdash; noise, bright light, crowded rooms with too many conversations all cost more energy than they seem to. Our fuel comes from quiet: doing things alone, studying, walking, thinking. The world mostly asks everyone to perform as an extrovert, forgetting that the ability to focus deeply, observe closely, and stay calm under noise is its own kind of advantage. I'm not undervaluing extroverts here &mdash; just giving introverts their due.</p>
-
-    <p>The book grounds all of this in real research, more than I expected was sitting behind personality types. Cain also writes about how introverts love: because their circle is already small, they tend to give everything to the people inside it, sometimes more than needed, sometimes to their own detriment &mdash; getting hurt more easily when a partner spends time socializing instead of sharing "us-time."</p>
-
-    <p>She doesn't skip introverted children either &mdash; how hard it can be to meet their needs, and how often they're wiser than their age from early on. This isn't just a book about introverts. It's closer to a decoder for a world only introverts really understand from the inside.</p>
-  </div>
+<main class="wrap books-page">
+  <div id="shelf" class="shelf-compact"></div>
+  <article class="bk-article" id="bookArticle"></article>
 </main>
 
-
+<script src="../books-data.js"></script>
+<script src="../books-shelf.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

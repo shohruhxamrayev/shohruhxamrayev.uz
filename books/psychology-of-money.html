@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Psychology of Money — Shohruh Xamrayev</title>
+<meta name="description" content="Nineteen short stories on how behavior, not math, drives our financial decisions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-books-page="book" data-slug="psychology-of-money">
 
 <header class="site">
   <div class="wrap">
@@ -24,23 +25,13 @@
   </div>
 </header>
 
-<main class="wrap">
-  <p style="margin-bottom: 16px;"><a href="../books.html" style="font-family: var(--sans); font-size: 14px;">&larr; Books</a></p>
-  <div class="book-detail-inner" style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; margin-bottom: 32px;">
-    <img src="https://covers.openlibrary.org/b/isbn/9780857197689-L.jpg" alt="The Psychology of Money cover" style="width:128px; height:184px; border-radius:6px; object-fit:cover; box-shadow: 0 1px 2px rgba(63, 49, 34, 0.12);">
-    <div>
-      <h1 class="page-title" style="margin-bottom: 6px;">The Psychology of Money</h1>
-      <p style="color:var(--muted); margin: 0 0 4px;">Morgan Housel</p>
-      <p style="font-family: var(--mono); font-size: 13px; color: var(--accent); margin: 0;">Currently Reading</p>
-    </div>
-  </div>
-
-  <div class="bio">
-    <p>Notes coming as I make my way through it.</p>
-  </div>
+<main class="wrap books-page">
+  <div id="shelf" class="shelf-compact"></div>
+  <article class="bk-article" id="bookArticle"></article>
 </main>
 
-
+<script src="../books-data.js"></script>
+<script src="../books-shelf.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

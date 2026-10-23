@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Books — Shohruh Xamrayev</title>
+<meta name="description" content="A personal shelf of what I am reading and what stuck with me.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-books-page="shelf">
 
 <header class="site">
   <div class="wrap">
@@ -24,26 +25,20 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap books-page">
+  <h1 class="visually-hidden">Books</h1>
 
-  <div class="books-intro-block">
-    <h1 class="page-title">Books</h1>
-    <p class="books-intro">A personal shelf of what I'm reading and what stuck with me.</p>
-  </div>
+  <section class="shelf-section" aria-label="Bookshelf">
+    <div id="shelf"></div>
+    <div class="shelf-info" id="shelfInfo" aria-live="polite"></div>
+    <p class="bk-browse"><a href="books-collection.html">Browse the full collection &rarr;</a></p>
+  </section>
 
-  <div class="books-shelf-wrap">
-    <div class="books-grid" id="booksGrid"></div>
-  </div>
-
-  <p class="browse-collection"><a href="books-collection.html">Browse the full collection &rarr;</a></p>
-
-  <div class="entry-list" id="booksList"></div>
-
+  <section class="bk-list" id="booksList" aria-label="All books"></section>
 </main>
 
-
 <script src="books-data.js"></script>
-<script src="books-render.js"></script>
+<script src="books-shelf.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

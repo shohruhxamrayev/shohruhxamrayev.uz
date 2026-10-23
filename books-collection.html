@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Collection — Shohruh Xamrayev</title>
+<meta name="description" content="Every book on the shelf.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-books-page="collection">
 
 <header class="site">
   <div class="wrap">
@@ -24,100 +25,35 @@
   </div>
 </header>
 
-<main class="wrap">
-  <a class="back-link" href="books.html">&larr; Back to the shelf</a>
+<main class="wrap books-page">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="books.html">Books</a><span>/</span><span aria-current="page">Collection</span></nav>
 
-  <h1 class="page-title">The collection</h1>
-  <p style="color:var(--muted); margin: -20px 0 28px;">Every book on the shelf. Search the shelf, or filter by status.</p>
+  <h1 class="col-heading">The collection</h1>
+  <p class="col-lede">Every book on the shelf. Search the shelf, filter by status, and switch between cover and list views.</p>
 
-  <div class="collection-search-wrap">
-    <input type="text" class="collection-search" id="bookSearch" placeholder="Search by title or author">
+  <label class="col-search">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <input type="search" id="bookSearch" placeholder="Search by title or author" aria-label="Search by title or author" autocomplete="off">
+  </label>
+
+  <div class="col-bar">
+    <div class="col-tabs" role="tablist">
+      <button class="col-tab active" role="tab" aria-selected="true" data-filter="all">All <span id="countAll"></span></button>
+      <button class="col-tab" role="tab" aria-selected="false" data-filter="read">Read <span id="countRead"></span></button>
+      <button class="col-tab" role="tab" aria-selected="false" data-filter="reading">Reading <span id="countReading"></span></button>
+    </div>
+    <div class="col-views">
+      <button class="col-view active" data-view="grid" aria-label="Cover view" aria-pressed="true"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg></button>
+      <button class="col-view" data-view="list" aria-label="List view" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="2.5" cy="4" r="1"/><circle cx="2.5" cy="8" r="1"/><circle cx="2.5" cy="12" r="1"/><rect x="5" y="3.3" width="9" height="1.4" rx=".7"/><rect x="5" y="7.3" width="9" height="1.4" rx=".7"/><rect x="5" y="11.3" width="9" height="1.4" rx=".7"/></svg></button>
+    </div>
   </div>
 
-  <div class="tab-row">
-    <div class="tab-row-tabs">
-      <button class="tab-btn active" data-filter="all">All <span id="countAll"></span></button>
-      <button class="tab-btn" data-filter="read">Read <span id="countRead"></span></button>
-      <button class="tab-btn" data-filter="reading">Reading <span id="countReading"></span></button>
-    </div>
-    <div class="view-toggle-row">
-      <button class="view-toggle-btn active" id="gridViewBtn" aria-label="Grid view">&#9638;</button>
-      <button class="view-toggle-btn" id="listViewBtn" aria-label="List view">&#9776;</button>
-    </div>
-  </div>
-
-  <div class="books-grid collection-grid" id="collectionGrid"></div>
+  <div id="collectionGrid" class="col-grid"></div>
+  <p class="col-empty" id="collectionEmpty" hidden>No books match that search.</p>
 </main>
 
-
 <script src="books-data.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var grid = document.getElementById('collectionGrid');
-    var search = document.getElementById('bookSearch');
-    var tabs = document.querySelectorAll('.tab-btn');
-    if (!grid || typeof booksData === 'undefined') return;
-
-    var activeFilter = 'all';
-
-    var readCount = booksData.filter(function (b) { return b.status === 'read'; }).length;
-    var readingCount = booksData.filter(function (b) { return b.status === 'reading'; }).length;
-    document.getElementById('countAll').textContent = booksData.length;
-    document.getElementById('countRead').textContent = readCount;
-    document.getElementById('countReading').textContent = readingCount;
-
-    booksData.forEach(function (book) {
-      var card = document.createElement('a');
-      card.className = 'book-card';
-      card.href = 'books/' + book.slug + '.html';
-      card.dataset.status = book.status;
-      card.dataset.title = book.title.toLowerCase();
-      card.dataset.author = book.author.toLowerCase();
-      card.innerHTML =
-        '<img class="book-card-cover" src="' + book.cover + '" alt="' + book.title + ' cover">' +
-        '<div class="book-card-title">' + book.title + '</div>' +
-        '<div class="book-card-author">' + book.author + '</div>';
-      grid.appendChild(card);
-    });
-
-    var cards = grid.querySelectorAll('.book-card');
-
-    function applyFilters() {
-      var query = search.value.trim().toLowerCase();
-      cards.forEach(function (card) {
-        var matchesFilter = activeFilter === 'all' || card.dataset.status === activeFilter;
-        var matchesSearch = !query || card.dataset.title.includes(query) || card.dataset.author.includes(query);
-        card.style.display = (matchesFilter && matchesSearch) ? '' : 'none';
-      });
-    }
-
-    search.addEventListener('input', applyFilters);
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        tabs.forEach(function (t) { t.classList.remove('active'); });
-        tab.classList.add('active');
-        activeFilter = tab.dataset.filter;
-        applyFilters();
-      });
-    });
-
-    var gridBtn = document.getElementById('gridViewBtn');
-    var listBtn = document.getElementById('listViewBtn');
-
-    gridBtn.addEventListener('click', function () {
-      grid.classList.remove('list-view');
-      gridBtn.classList.add('active');
-      listBtn.classList.remove('active');
-    });
-
-    listBtn.addEventListener('click', function () {
-      grid.classList.add('list-view');
-      listBtn.classList.add('active');
-      gridBtn.classList.remove('active');
-    });
-  });
-</script>
+<script src="books-shelf.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
