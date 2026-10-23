@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Journal — Shohruh Xamrayev</title>
+<meta name="description" content="Notes and photographs from trips, one entry per journey.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-journal-page="index">
 
 <header class="site">
   <div class="wrap">
@@ -24,89 +25,22 @@
   </div>
 </header>
 
-<main class="wrap">
-  <h1 class="page-title">Journal</h1>
-  <p class="journal-intro">Notes and photographs from trips, one entry per journey.</p>
+<main class="wrap journal-page">
+  <h1 class="page-title jr-heading">Journal</h1>
+  <p class="jr-intro">Notes and photographs from trips, one entry per journey.</p>
 
-  <h2 class="essay-year-heading">2026</h2>
-  <div class="essay-list">
-    <div class="essay-row">
-      <div class="essay-row-left">
-        <img class="essay-thumb" src="journal/samarkand-1.jpg" alt="">
-        <div class="essay-content">
-          <h3><a href="journal/tashkent-samarkand.html">Tashkent &amp; Samarkand</a></h3>
-          <p>Three days walking through Tashkent and Samarkand, noticing familiar places from a slightly different perspective.</p>
-          <span class="essay-reading-time">Travel</span>
-        </div>
-      </div>
-      <span class="essay-date">Jul 18&ndash;20</span>
-    </div>
-    <div class="essay-row">
-      <div class="essay-row-left">
-        <img class="essay-thumb" src="journal/tashkent-may-1.jpg" alt="">
-        <div class="essay-content">
-          <h3><a href="journal/tashkent-may.html">Tashkent</a></h3>
-          <p>Evenings along the canal, lit-up towers, and the city at night.</p>
-          <span class="essay-reading-time">Travel</span>
-        </div>
-      </div>
-      <span class="essay-date">May 18&ndash;20</span>
-    </div>
-    <div class="essay-row">
-      <div class="essay-row-left">
-        <img class="essay-thumb" src="journal/d-thumb.jpg" alt="">
-        <div class="essay-content">
-          <h3><a href="journal/d.html">d</a></h3>
-          <p>Insha'allah.</p>
-          <span class="essay-reading-time">Goal</span>
-        </div>
-      </div>
-      <span class="essay-date">May 11</span>
-    </div>
-  </div>
+  <div class="jr-stats" id="journalStats"></div>
 
-  <h2 class="essay-year-heading">2025</h2>
-  <div class="essay-list">
-    <div class="essay-row">
-      <div class="essay-row-left">
-        <img class="essay-thumb" src="journal/samarkand-may-1.jpg" alt="">
-        <div class="essay-content">
-          <h3><a href="journal/samarkand-may.html">Samarkand</a></h3>
-          <p>Blue domes and quiet courtyards across the old city.</p>
-          <span class="essay-reading-time">Travel</span>
-        </div>
-      </div>
-      <span class="essay-date">May 10</span>
-    </div>
-    <div class="essay-row">
-      <div class="essay-row-left">
-        <img class="essay-thumb" src="journal/surxondaryo-1.jpg" alt="">
-        <div class="essay-content">
-          <h3><a href="journal/surxondaryo.html">Surxondaryo</a></h3>
-          <p>A hike through green mountain valleys, streams, and snow-capped peaks in Surxondaryo.</p>
-          <span class="essay-reading-time">Travel</span>
-        </div>
-      </div>
-      <span class="essay-date">Mar 31</span>
-    </div>
-  </div>
+  <section class="jm" id="journalMap" aria-label="Map of places in the journal"></section>
 
-  <h2 class="essay-year-heading">2024</h2>
-  <div class="essay-list">
-    <div class="essay-row">
-      <div class="essay-row-left">
-        <img class="essay-thumb" src="journal/bukhara-1.jpg" alt="">
-        <div class="essay-content">
-          <h3><a href="journal/bukhara.html">Bukhara</a></h3>
-          <p>The Kalyan Minaret at dusk, and the old city's mosques and courtyards.</p>
-          <span class="essay-reading-time">Travel</span>
-        </div>
-      </div>
-      <span class="essay-date">Apr 12</span>
-    </div>
-  </div>
+  <div class="jr-tabs" id="journalTabs" role="group" aria-label="Filter entries"></div>
+
+  <div id="journalList"></div>
 </main>
 
+<script src="journal-data.js"></script>
+<script src="journal-map.js"></script>
+<script src="journal.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
