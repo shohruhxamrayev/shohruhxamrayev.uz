@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shohruh Xamrayev</title>
-<meta name="description" content="Personal website of Shohruh Xamrayev">
+<meta name="description" content="Curiosity has taken me further than certainty ever could. Essays, books, journal and projects by Shohruh Xamrayev.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-home-page="home">
 
 <header class="site">
   <div class="wrap">
@@ -26,28 +26,49 @@
 </header>
 
 <main class="wrap">
-  <div class="hero hero-no-photo">
-    <div>
-      <h1>Hi, I'm Shohruh.</h1>
-      <p class="tagline">Curiosity has taken me further than certainty ever could.</p>
-    </div>
-  </div>
+  <section class="hm-hero">
+    <p class="hm-kicker"><span class="hm-dot" aria-hidden="true"></span>Learning · building · writing</p>
+    <h1 class="hm-title">Hi, I'm Shohruh.</h1>
+    <p class="hm-tagline">Curiosity has taken me further than certainty ever could.</p>
+    <p class="hm-labels" aria-label="Student, builder, founder: all works in progress. Curiosity is the only label I'm happy to keep.">
+      <span class="hm-label">Student</span><span class="hm-sep">,</span>
+      <span class="hm-label">builder</span><span class="hm-sep">,</span>
+      <span class="hm-label">founder</span><span class="hm-sep">&mdash;</span>
+      <span class="hm-keep">curious.</span>
+    </p>
+  </section>
 
-  <div class="bio">
-    <p>So I keep learning, building, and asking bigger questions.</p>
+  <section class="hm-bio bio">
+    <p class="hm-lead">So I keep learning, building, and asking bigger questions.</p>
 
-    <p>I occasionally write my thoughts in <a href="essays.html">essays</a> and keep notes from the <a href="books.html">books</a> that have changed the way I think. I believe curiosity compounds when you learn, reflect, and share what you've learned.</p>
+    <p>I occasionally write my thoughts in <a href="essays.html" data-preview="essays">essays</a> and keep notes from the <a href="books.html" data-preview="books">books</a> that have changed the way I think. I believe curiosity compounds when you learn, reflect, and share what you've learned.</p>
 
     <p>Reading and writing won't be enough at times. I study the subject inside out if I need to. I do deep dives.</p>
 
-    <p>When an idea stays in my head for too long, I try to turn it into something real. Sometimes it's a website, sometimes a tool, sometimes just an experiment. You can find a few of those in my <a href="projects.html">projects</a>.</p>
+    <p>When an idea stays in my head for too long, I try to turn it into something real. Sometimes it's a website, sometimes a tool, sometimes just an experiment. You can find a few of those in my <a href="projects.html" data-preview="projects">projects</a>.</p>
 
-    <p>Away from my computer, I usually trade code for movement. I run, work out, and occasionally escape into nature whenever I need to think more clearly. Some of those moments end up in my <a href="journal.html">journal</a>.</p>
+    <p>Away from my computer, I usually trade code for movement. I run, work out, and occasionally escape into nature whenever I need to think more clearly. Some of those moments end up in my <a href="journal.html" data-preview="journal">journal</a>.</p>
 
     <p>I don't think a single title can describe a person. Student, builder, founder&mdash;they're all works in progress. Curiosity is probably the only label I'm happy to keep.</p>
 
     <p>More about me <a href="about.html">here</a>.</p>
-  </div>
+  </section>
+
+  <section class="hm-now" aria-labelledby="nowH">
+    <h2 class="hm-h" id="nowH"><span>Lately</span><em>pulled live from the site</em></h2>
+    <div class="hm-now-grid" id="nowGrid"></div>
+  </section>
+
+  <section class="hm-explore" aria-labelledby="exploreH">
+    <h2 class="hm-h" id="exploreH"><span>Explore</span></h2>
+    <nav class="hm-ex" id="exploreList">
+      <a href="books.html" data-k="books"><b>Books</b><small>What I'm reading and what stuck</small><em></em></a>
+      <a href="essays.html" data-k="essays"><b>Essays</b><small>Thinking out loud</small><em></em></a>
+      <a href="journal.html" data-k="journal"><b>Journal</b><small>Trips and photographs</small><em></em></a>
+      <a href="projects.html" data-k="projects"><b>Projects</b><small>Ideas turned into something real</small><em></em></a>
+      <a href="studio.html" data-k="studio"><b>Studio</b><small>Quotes, films, rules, tools</small><em></em></a>
+    </nav>
+  </section>
 </main>
 
 <footer class="site">
@@ -62,6 +83,10 @@
   </div>
 </footer>
 
+<script src="books-data.js"></script>
+<script src="journal-data.js"></script>
+<script src="studio-data.js"></script>
+<script src="home.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
