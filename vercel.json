@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.shohruhxamrayev.uz" }],
+      "destination": "https://shohruhxamrayev.uz/:path*",
+      "permanent": true
+    }
+  ]
+}
