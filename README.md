@@ -22,3 +22,15 @@ The map, stats, filters, timeline, entry page and photo viewer all update from t
 ## SEO
 
 `tools/seo.py` adds the title, description, share-preview tags, icons and structured data (who Shohruh Xamrayev is, founder of Makon, essay authorship) to every page, and rebuilds `sitemap.xml`. After adding a page, run `python3 tools/seo.py` (or ask Claude to).
+
+## Telling search engines about changes (IndexNow)
+
+After pushing new or changed pages, run:
+
+```
+python3 tools/indexnow.py
+```
+
+It sends every URL in `sitemap.xml` to IndexNow, which Bing, Yandex and other search engines share
+(you can also pass just the pages that changed, e.g. `python3 tools/indexnow.py essays/new-essay.html`).
+Keep the `577c46a240b6a104e6e0273002101e85.txt` key file in the site root.
