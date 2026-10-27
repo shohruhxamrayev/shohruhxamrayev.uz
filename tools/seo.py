@@ -14,14 +14,14 @@ PERSON = {
     "alternateName": ["Shohruh", "Xamrayev", "Shohruh Khamrayev", "Shoxrux Xamrayev", "Shohruh Hamrayev", "Shokhrukh Khamraev", "Shohrukh Khamrayev", "Шохрух Хамраев"],
     "url": SITE + "/", "image": SITE + "/icon-512.png",
     "jobTitle": "Founder of Makon",
-    "description": "Shohruh Xamrayev is the founder of Makon, an AI studio that turns one photo of a room into a measured plan, a 3D model and a build brief. He writes essays, keeps notes on books and builds web products.",
+    "description": "Shohruh Xamrayev is the founder of Makon, a studio where you redesign a room with AI, build it in 3D and design every piece of furniture. He writes essays, keeps notes on books and builds web products.",
     "worksFor": {"@type": "Organization", "@id": SITE + "/projects/makon.html#org", "name": "Makon", "url": "https://makon-khaki.vercel.app/"},
     "knowsAbout": ["Web development", "Product design", "Artificial intelligence", "Economics", "Psychology", "Technology", "History"],
     "sameAs": SOCIALS,
 }
 MAKON_LIVE = "https://makon-khaki.vercel.app/"
 MAKON_ORG = {"@type": "Organization", "@id": SITE + "/projects/makon.html#org", "name": "Makon",
-             "description": "AI studio for redesigning a room from one photo: redesign, measured floor plan, 3D model, furniture list and build brief.",
+             "description": "Room design studio: redesign a room with AI from one photo, build it as a floor plan and 3D room, design and place every piece of furniture, and get a build brief.",
              "founder": {"@id": PERSON_ID}, "url": MAKON_LIVE,
              "sameAs": ["https://github.com/shohruhxamrayev/makon", SITE + "/projects/makon.html"]}
 WEBSITE = {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": NAME,
@@ -58,7 +58,7 @@ OVERRIDES = {
                    "About Shohruh Xamrayev, founder of Makon: curiosity, building things on my own, and caring about the people around me."),
     "projects.html": (None, "Projects by Shohruh Xamrayev, including Makon, an AI room-redesign studio he founded, and this website."),
     "projects/makon.html": ("Makon by Shohruh Xamrayev — AI room redesign",
-                            "Makon, founded and built by Shohruh Xamrayev: one photo of a room becomes an AI redesign, a measured floor plan, a 3D model, a furniture list and a build brief."),
+                            "Makon, founded and built by Shohruh Xamrayev: redesign a room with AI from one photo, build it as a floor plan and a 3D room, design every piece of furniture and get a build brief."),
     "essays.html": (None, "Essays by Shohruh Xamrayev on psychology, money, habits, the mind and character."),
     "books.html": (None, "Books Shohruh Xamrayev is reading and has read, with ratings and notes."),
     "journal.html": (None, "Shohruh Xamrayev's journal: notes and photographs from trips across Uzbekistan."),

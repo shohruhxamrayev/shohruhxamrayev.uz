@@ -86,7 +86,7 @@
     }
     html += card('hm-card-build', 'projects/makon.html',
       '<img src="projects/img/makon-after.jpg" alt="" loading="lazy">',
-      'Latest build', 'Makon', 'One photo of a room → plan, 3D model and build brief');
+      'Latest build', 'Makon', 'Redesign with AI, build it in 3D, design every piece');
     html += '<a class="hm-card hm-card-essay" href="essays.html" id="essayCard"><span class="hm-card-body"><span class="hm-card-k">Latest essay</span><span class="hm-card-t hm-skel">&nbsp;</span><span class="hm-card-m hm-skel">&nbsp;</span></span></a>';
     grid.innerHTML = html;
 
