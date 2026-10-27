@@ -3147,3 +3147,6 @@ body.es-hover .es-index .essay-thumb { display: none; }
 .pj-links { display: flex; gap: 18px; margin: 10px 0 0; font-size: 14.5px; }
 .pj-links a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(196,112,63,.3); }
 .pj-links a:hover { border-bottom-color: var(--accent); }
+
+.ab-names { margin: -6px 0 18px; font-size: 14px; line-height: 1.6; color: var(--muted); }
+.ab-names span { color: var(--ink); }

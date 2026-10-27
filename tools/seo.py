@@ -11,7 +11,7 @@ SOCIALS = ["https://www.linkedin.com/in/shohruh-xamrayev-4703a8361", "https://gi
            "https://x.com/shohruhxamrayev", "https://t.me/shohruhxamrayev"]
 PERSON = {
     "@type": "Person", "@id": PERSON_ID, "name": NAME, "givenName": "Shohruh", "familyName": "Xamrayev",
-    "alternateName": ["Shohruh", "Xamrayev", "Shohruh Khamrayev"],
+    "alternateName": ["Shohruh", "Xamrayev", "Shohruh Khamrayev", "Shoxrux Xamrayev", "Shohruh Hamrayev", "Shokhrukh Khamraev", "Shohrukh Khamrayev", "Шохрух Хамраев"],
     "url": SITE + "/", "image": SITE + "/icon-512.png",
     "jobTitle": "Founder of Makon",
     "description": "Shohruh Xamrayev is the founder of Makon, an AI studio that turns one photo of a room into a measured plan, a 3D model and a build brief. He writes essays, keeps notes on books and builds web products.",
