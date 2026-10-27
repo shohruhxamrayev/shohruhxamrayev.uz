@@ -69,7 +69,7 @@ pages = sorted(glob.glob("*.html") + glob.glob("*/*.html"))
 sitemap = []
 for path in pages:
     s = open(path).read()
-    if "<head>" not in s: continue
+    if "<head>" not in s or path.startswith(("yandex_", "google")): continue
     s = re.sub(r"\n?<!-- seo -->.*?<!-- /seo -->\n?", "\n", s, flags=re.S)
 
     t = re.search(r"<title>(.*?)</title>", s, re.S)
