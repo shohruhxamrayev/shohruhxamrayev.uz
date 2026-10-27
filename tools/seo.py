@@ -12,7 +12,7 @@ SOCIALS = ["https://www.linkedin.com/in/shohruh-xamrayev-4703a8361", "https://gi
 PERSON = {
     "@type": "Person", "@id": PERSON_ID, "name": NAME, "givenName": "Shohruh", "familyName": "Xamrayev",
     "alternateName": ["Shohruh", "Xamrayev", "Shohruh Khamrayev", "Shoxrux Xamrayev", "Shohruh Hamrayev", "Shokhrukh Khamraev", "Shohrukh Khamrayev", "Шохрух Хамраев"],
-    "url": SITE + "/", "image": SITE + "/icon-512.png",
+    "url": SITE + "/", "image": SITE + "/shohruh-xamrayev.jpg",
     "jobTitle": "Founder of Makon",
     "description": "Shohruh Xamrayev is the founder of Makon, a studio where you redesign a room with AI, build it in 3D and design every piece of furniture. He writes essays, keeps notes on books and builds web products.",
     "worksFor": {"@type": "Organization", "@id": SITE + "/projects/makon.html#org", "name": "Makon", "url": "https://makon-khaki.vercel.app/"},
@@ -95,6 +95,7 @@ for path in pages:
         graph = [PERSON, WEBSITE, MAKON_ORG]
     elif path == "about.html":
         og_type = "profile"
+        img = SITE + "/shohruh-xamrayev.jpg"
         graph = [{"@type": "ProfilePage", "@id": url + "#page", "url": url, "name": title, "mainEntity": {"@id": PERSON_ID}, "isPartOf": {"@id": SITE + "/#website"}}, PERSON, MAKON_ORG]
     elif path == "projects/makon.html":
         img = SITE + "/projects/img/makon-after.jpg"
